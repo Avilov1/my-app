@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Init my react app and created develop branch
         </a>
       </header>
     </div>
