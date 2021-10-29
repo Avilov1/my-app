@@ -1,4 +1,4 @@
-@import "src/_variables.scss";
+@import "/src/index.scss";
 
 .wrapper {
   max-width: 1600px;
@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  visibility: visible;
 
   .track {
     position: absolute;
@@ -121,6 +122,7 @@
         border: none;
         background-color: transparent;
         color: $orange;
+        cursor: pointer;
       }
 
       .singUp {
@@ -129,6 +131,7 @@
         color: $white;
         border-radius: 3px;
         padding: 16px 32px;
+        cursor: pointer;
       }
     }
   }

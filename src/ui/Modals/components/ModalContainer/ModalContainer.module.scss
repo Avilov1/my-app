@@ -1,0 +1,60 @@
+@import "/src/index.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.modalWrapper {
+  padding: 80px 25px;
+  background: $white;
+  border-radius: 3px;
+  text-align: center;
+  position: inherit;
+  width: 624px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .modalHeader {
+    img {
+      position: absolute;
+      margin: 20px 20px 0 0;
+      right: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    span {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 36px;
+      color: $darkGray;
+      margin-bottom: 45px;
+    }
+  }
+
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+
