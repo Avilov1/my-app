@@ -1,19 +1,31 @@
-import styles from './Home.module.scss'
 import {Logo} from "../../ui/Logo/Logo";
-import {useState} from "react";
-import {SingUpModal} from "../../ui/Modals/SingUpModal/SingUpModal";
-import {LoginModal} from "../../ui/Modals/LoginModal/LoginModal";
+import {LoginModal} from "../AuthModals/LoginModal";
+import {SingUpModal} from "../AuthModals/SingUpModal";
+import {useToggle} from "../../services/useToggle";
+
+import styles from './Home.module.scss'
 
 export const Home = () => {
-    const [isLoginVisible, setIsLoginVisible] = useState(false)
-    const [isSingUpVisible, setIsSingUpVisible] = useState(false)
+    const [isLoginVisible, toggleIsLoginVisible] = useToggle(false)
+    const [isSingUpVisible, toggleIsSingUpVisible] = useToggle(false)
+
+    const replaceAuthModal = () => {
+        toggleIsSingUpVisible()
+        toggleIsLoginVisible()
+    }
 
     const nav = ['Home', 'Service', 'Clients', 'Contact']
 
     return (
         <>
-            <SingUpModal isVisible={isSingUpVisible} setIsVisible={setIsSingUpVisible}/>
-            <LoginModal isVisible={isLoginVisible} setIsVisible={setIsLoginVisible}/>
+            {
+                isLoginVisible && <LoginModal
+                    isVisible={isLoginVisible} toggleIsVisible={toggleIsLoginVisible} replaceAuthModal={replaceAuthModal}/>
+            }
+            {
+                isSingUpVisible &&  <SingUpModal
+                    isVisible={isSingUpVisible} toggleIsVisible={toggleIsSingUpVisible} replaceAuthModal={replaceAuthModal} />
+            }
             <div className={styles.wrapper}>
                 <div className={styles.leftSide}>
                     <div className={styles.container}>
@@ -45,14 +57,13 @@ export const Home = () => {
                 <div className={styles.rightSide}>
                     <div className={styles.headerLeft}>
                         <div className={styles.authorize}>
-                            <button className={styles.login} onClick={() => setIsLoginVisible(true)}>Log in</button>
-                            <button className={styles.singUp} onClick={() => setIsSingUpVisible(true)}>Sing up</button>
+                            <button className={styles.login} onClick={toggleIsLoginVisible}>Log in</button>
+                            <button className={styles.singUp} onClick={toggleIsSingUpVisible}>Sing up</button>
                         </div>
                     </div>
                 </div>
                 <img src={'./img/track1.png'} alt={'track'} className={styles.track}/>
             </div>
         </>
-
     )
 }

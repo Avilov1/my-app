@@ -13,6 +13,12 @@
     line-height: 12px;
   }
 
+  .messageError {
+    color: red;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
   input {
     color: $darkGray;
     font-size: 16px;
@@ -31,4 +37,12 @@
       padding-left: 5px;
     }
   }
+
+  .error {
+    border: 2px solid rgba(red, 0.5);
+    &:focus {
+      outline: 1px solid rgba(red, 0.4);;
+    }
+  }
 }
+

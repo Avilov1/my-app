@@ -1,16 +1,20 @@
 import styles from "./ModalInput.module.scss";
+import classnames from "classnames";
 
-export const ModalInput = (props) => {
-    const {type, label, placeholder, value, setValue} = props
+export const ModalInput = ({type, label, placeholder, value, onChange, isError = false, messageError}) => {
+    const inputClass = classnames({[styles.error]: isError})
 
     return (
         <div className={styles.container}>
             <div>
-                <label htmlFor={type}>{label}</label>
+                {
+                    messageError
+                        ? <label className={styles.messageError} htmlFor={type}>{messageError}</label>
+                        : <label htmlFor={type}>{label}</label>
+                }
             </div>
             <div>
-                <input type={type} id={type} placeholder={placeholder}
-                       value={value} onChange={setValue}/>
+                <input className={inputClass} type={type} placeholder={placeholder} value={value} onChange={onChange}/>
             </div>
         </div>
     )
