@@ -1,0 +1,844 @@
+{
+  "warehouses": [
+    {
+      "id": "1", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "11", "manufacturer": "YAG", "itemNumber": "C88801", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "12", "manufacturer": "YAG", "itemNumber": "C88802", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "13", "manufacturer": "YAG", "itemNumber": "C88803", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "14", "manufacturer": "YAG", "itemNumber": "C88804", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "15", "manufacturer": "YAG", "itemNumber": "C88805", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "16", "manufacturer": "YAG", "itemNumber": "C88806", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "17", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "18", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "19", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "20", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "21", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "22", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "23", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "24", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "25", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "26", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "27", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "AIR"
+        }
+      ]
+    },
+    {
+      "id": "2", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "21", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "22", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "23", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "24", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "25", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "26", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "27", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "28", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "29", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "30", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "31", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "32", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "33", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "34", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "35", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "36", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "37", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "3", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "31", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "32", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "33", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "34", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "35", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "36", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "37", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "38", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "39", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "40", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "41", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "42", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "43", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "44", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "45", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "46", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "47", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "4", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "21", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "22", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "23", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "24", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "25", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "26", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "27", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "28", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "29", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "30", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "31", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "32", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "33", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "34", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "35", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "36", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "37", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "5", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "251", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "252", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "253", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "254", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "255", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "256", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "257", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "258", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "259", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "360", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "361", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "362", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "363", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "364", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "735", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "376", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "377", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "6", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "121", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "122", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "123", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "124", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "125", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "126", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "127", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "128", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "129", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "130", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "131", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "132", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "133", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "134", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "135", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "136", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "137", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "7", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "221", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "222", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "223", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "224", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "225", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "226", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "227", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "228", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "229", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "230", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "231", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "232", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "233", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "234", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "235", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "236", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "237", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "8", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "321", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "322", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "323", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "324", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "325", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "326", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "327", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "328", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "329", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "330", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "331", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "332", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "333", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "334", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "335", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "336", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "337", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "9", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "421", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "422", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "423", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "424", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "425", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "426", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "427", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "428", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "429", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "430", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "431", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "432", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "433", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "434", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "435", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "436", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "437", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "10", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "521", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "522", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "523", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "524", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "525", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "526", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "527", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "528", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "529", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "530", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "531", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "532", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "533", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "534", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "535", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "536", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "537", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "11", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "621", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "622", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "623", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "624", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "625", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "626", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "627", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "628", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "629", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "630", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "631", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "632", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "633", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "634", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "635", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "636", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "637", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "12", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "721", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "722", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "723", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "724", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "725", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "726", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "727", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "728", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "729", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "730", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "731", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "732", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "733", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "734", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "735", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "736", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "737", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "13", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "821", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "822", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "823", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "824", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "825", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "826", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "827", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "828", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "829", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "830", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "831", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "832", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "833", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "834", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "835", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "836", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "837", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "14", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "921", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "922", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "923", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "924", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "925", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "926", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "927", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "928", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "929", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "930", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "931", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "932", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "933", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "934", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "935", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "936", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "937", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    },
+    {
+      "id": "15", "title": "Warehouse No. 1", "lengthM": "72", "widthM": "24", "heightM": "6",
+      "products": [
+        {
+          "id": "021", "manufacturer": "YAG", "itemNumber": "C88101", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "022", "manufacturer": "YAG", "itemNumber": "C88102", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "023", "manufacturer": "YAG", "itemNumber": "C88103", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "024", "manufacturer": "YAG", "itemNumber": "C88104", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "025", "manufacturer": "YAG", "itemNumber": "C88105", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "026", "manufacturer": "YAG", "itemNumber": "C88106", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "027", "manufacturer": "YAG", "itemNumber": "C88807", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "028", "manufacturer": "YAG", "itemNumber": "C88808", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "029", "manufacturer": "YAG", "itemNumber": "C88809", "purchasingTechnology": "S", "Shipment method": "SEA"
+        },
+        {
+          "id": "030", "manufacturer": "YAG", "itemNumber": "C88810", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "031", "manufacturer": "YAG", "itemNumber": "C88811", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "032", "manufacturer": "YAG", "itemNumber": "C88812", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "033", "manufacturer": "YAG", "itemNumber": "C88813", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "034", "manufacturer": "YAG", "itemNumber": "C88814", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "035", "manufacturer": "YAG", "itemNumber": "C88815", "purchasingTechnology": "S", "Shipment method": "TRUCK"
+        },
+        {
+          "id": "036", "manufacturer": "YAG", "itemNumber": "C88816", "purchasingTechnology": "S", "Shipment method": "AIR"
+        },
+        {
+          "id": "037", "manufacturer": "YAG", "itemNumber": "C88817", "purchasingTechnology": "S", "Shipment method": "SEA"
+        }
+      ]
+    }
+  ]
+}

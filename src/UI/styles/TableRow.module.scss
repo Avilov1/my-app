@@ -1,0 +1,20 @@
+@import "src/index";
+
+.tr {
+  border-bottom: 1px solid #ECEFF2;
+}
+
+.td {
+  text-align: start;
+  width: 20%;
+  height: 67px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: $darkGray;
+  padding-left: 24px;
+
+  span {
+    padding-left: 16px;
+  }
+}
