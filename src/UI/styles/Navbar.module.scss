@@ -22,21 +22,30 @@
     border-left: 2px solid transparent;
     transition: 0.2s;
 
-    .active {
-      opacity: 1;
-      color: $orange;
-      border-color: $orange;
-    }
+
 
     a {
+      display: flex;
+      align-items: center;
       text-decoration: none;
+
+      .active {
+        opacity: 1;
+        color: $orange;
+        border-color: $orange;
+      }
+
+      &:visited {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+
+    span {
       position: absolute;
       margin-left: 72px;
       font-weight: 500;
-
-      &:visited {
-        color: inherit;
-      }
     }
 
     svg {

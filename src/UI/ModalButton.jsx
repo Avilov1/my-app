@@ -1,8 +1,14 @@
 import styles from './styles/ModalBtn.module.scss'
 
 export const ModalButton = (props) => {
-    const {text, onClick, type} = props
+	const {text, onClick, type} = props
 
-    return <button className={styles.btn} onClick={onClick} type={type}>{text}</button>
-
+	return (
+		<button
+			className={styles.btn}
+			onClick={onClick}
+			type={type}>
+			{text}
+		</button>
+	)
 }

@@ -1,19 +1,20 @@
-import {createContext, useContext, useState} from "react";
+import {createContext, useContext} from "react";
+import {useLocalStorage} from "../services";
 
 const AuthContext = createContext(null)
 
 export const useAuthContext = () => {
-    return useContext(AuthContext)
+	return useContext(AuthContext)
 }
 
 export const AuthProvider = ({children}) => {
-    const [isAuth, setIsAuth] = useState(false)
+	const [isAuth, setIsAuth] = useLocalStorage(false, "auth")
 
-    return (
-        <AuthContext.Provider value={{isAuth, setIsAuth}}>
-            {children}
-        </AuthContext.Provider>
-    )
+	return (
+		<AuthContext.Provider value={{isAuth, setIsAuth}}>
+			{children}
+		</AuthContext.Provider>
+	)
 }
 
 
