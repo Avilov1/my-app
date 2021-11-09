@@ -1,0 +1,15 @@
+@import "./src/index";
+
+.border {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #CED6DD;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.active {
+  background-color: $orange;
+  border-color: transparent;
+}

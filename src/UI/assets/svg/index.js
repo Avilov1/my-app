@@ -12,22 +12,26 @@ import {ReactComponent as NotificationsSvg} from "./notification.svg";
 import {ReactComponent as SearchSvg} from "./search.svg";
 import {ReactComponent as PlusSvg} from "./plus.svg";
 import {ReactComponent as SelectIconSvg} from "./selectIcon.svg";
-import {ReactComponent as CheckboxIconSvg} from "./checkboxIcon.svg";
+import {ReactComponent as CheckboxIconSvg} from "./checkBoxIcon.svg";
+import {ReactComponent as SelectSvg} from "./select.svg";
+import {ReactComponent as MoveSvg} from "./move.svg";
 
 export {
-    ProfileSvg,
-    CloseFormSvg,
-    ScrollEllipseSvg,
-    ContactsSvg,
-    HomeSvg,
-    WarehousesSvg,
-    AccountsSvg,
-    ChatSvg,
-    CardsSvg,
-    SettingsSvg,
-    NotificationsSvg,
-    SearchSvg,
-    PlusSvg,
-    SelectIconSvg,
-    CheckboxIconSvg
+	ProfileSvg,
+	CloseFormSvg,
+	ScrollEllipseSvg,
+	ContactsSvg,
+	HomeSvg,
+	WarehousesSvg,
+	AccountsSvg,
+	ChatSvg,
+	CardsSvg,
+	SettingsSvg,
+	NotificationsSvg,
+	SearchSvg,
+	PlusSvg,
+	SelectIconSvg,
+	CheckboxIconSvg,
+	SelectSvg,
+  MoveSvg,
 }

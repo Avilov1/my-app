@@ -1,5 +1,4 @@
 export {Logo} from "./Logo"
-export {MainContainer} from "./MainContainer"
 export {ModalButton} from "./ModalButton"
 export {ModalContainer} from "./ModalContainer"
 export {ModalInput} from "./ModalInput"

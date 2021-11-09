@@ -9,6 +9,7 @@ import {useAuthContext} from "../context";
 import {Redirect, Route, Switch} from "react-router-dom";
 import {privateRoutes} from "../routes";
 import React from "react";
+import {EditPanel} from "../UI/editPanel";
 
 export const MainPage = () => {
 	const {setIsAuth} = useAuthContext()
@@ -48,6 +49,7 @@ export const MainPage = () => {
 					</Switch>
 				</main>
 			</div>
+			<EditPanel />
 		</div>
 	)
 }

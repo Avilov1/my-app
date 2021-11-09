@@ -1,70 +1,70 @@
 @import "src/index";
 
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  .headerContent {
+  .rightSideHeader {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 24px;
+    position: relative;
 
-    .rightSideHeader {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
-      position: relative;
-
-      svg {
-        position: absolute;
-        left: 160px;
-      }
-
-      select {
-        width: 190px;
-        height: 44px;
-        border: 1px solid #E6E8EA;
-        box-sizing: border-box;
-        border-radius: 3px;
-        color: $darkGray;
-        padding-left: 16px;
-        -webkit-appearance: none;
-        font-size: 12px;
-        line-height: 12px;
-      }
-    }
-  }
-  .tableContainer {
-    margin-top: 32px;
-    overflow-y: auto;
-    border-radius: 3px;
-    height: 621px;
-  }
-
-  table {
-    padding-bottom: 15px;
-    width: 100%;
-    border-collapse: collapse;
-    background-color: $white;
-
-    tr {
-      border-bottom: 1px solid #ECEFF2;
+    svg {
+      position: absolute;
+      left: 160px;
     }
 
-    td, th {
-      text-align: start;
-      width: 20%;
-      height: 67px;
-      font-weight: 500;
+    select {
+      width: 190px;
+      height: 44px;
+      border: 1px solid #E6E8EA;
+      box-sizing: border-box;
+      border-radius: 3px;
+      color: $darkGray;
+      padding-left: 16px;
+      -webkit-appearance: none;
       font-size: 12px;
       line-height: 12px;
-      color: $darkGray;
-      padding-left: 24px;
-
-      span {
-        padding-left: 16px;
-      }
-    }
-
-    th {
-      font-weight: 600;
     }
   }
+}
+
+.tableContainer {
+  margin-top: 32px;
+  overflow-y: auto;
+  border-radius: 3px;
+  height: 621px;
+}
+
+table {
+  padding-bottom: 15px;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $white;
+
+  tr {
+    border-bottom: 1px solid #ECEFF2;
+  }
+
+  td, th {
+    text-align: start;
+    width: 20%;
+    height: 67px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: $darkGray;
+    padding-left: 24px;
+
+    span {
+      padding-left: 16px;
+    }
+  }
+
+  th {
+    font-weight: 600;
+  }
+}

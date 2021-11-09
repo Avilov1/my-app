@@ -2,27 +2,32 @@ import styles from "./styles/Warehouses.module.scss";
 import {SelectIconSvg} from "../UI/assets/svg";
 import {ButtonAdd} from "../UI";
 import {TableHeader} from "../UI/TableHeader";
-import {TableRow} from "../UI/TableRow";
+import {TableRowWarehouses} from "../UI/TableRowWarehouses";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useHistory, useLocation} from "react-router-dom";
-import {useToggle} from "../services";
+import {useLocalStorage, useToggle} from "../services";
 import {WarehouseAddModal} from "./WarehouseAddModal";
+import {data} from "../mock/mock";
 
 export const Warehouses = () => {
 	const [isVisibleAddPopup, toggleIsVisibleAddPopup] = useToggle(false)
-	const [warehouses, setWarehouses] = useState([])
-	const history = useHistory()
-	const {pathname} = useLocation()
+	const [warehouses, setWarehouses] = useLocalStorage(data.warehouses, "warehouses")
+	//const history = useHistory()
+	//const {pathname} = useLocation()
+	//const [warehouses, setWarehouses] = useState()
 
+	useEffect(() => {
+		const storage = localStorage.getItem("warehouses")
+		setWarehouses(JSON.parse(storage))
+	}, [isVisibleAddPopup])
+
+	/*
 	useEffect(() => {
 		axios.get("http://localhost:5000/warehouses")
 			.then(res => setWarehouses(res.data))
 	}, [])
-
-	const clickOnWarehouse = (id) => {
-		history.push(`${pathname}/${id}`)
-	}
+	*/
 
 	return (
 		<div>
@@ -53,15 +58,10 @@ export const Warehouses = () => {
 					<tbody>
 					{
 						warehouses && warehouses.map(warehouse =>
-							<TableRow
+							<TableRowWarehouses
 								key={warehouse.id}
-								id={warehouse.id}
-								onClick={() => clickOnWarehouse(warehouse.id)}
-								col1={warehouse.title}
-								col2={warehouse.products.length}
-								col3={warehouse.length}
-								col4={warehouse.width}
-								col5={warehouse.height}
+								//onClick={() => clickOnWarehouse(warehouse.id)}
+								obj={warehouse}
 							/>
 						)
 					}

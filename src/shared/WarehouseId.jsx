@@ -2,51 +2,52 @@ import styles from "./styles/Warehouses.module.scss";
 import {SelectIconSvg} from "../UI/assets/svg";
 import {ButtonAdd} from "../UI";
 import {TableHeader} from "../UI/TableHeader";
-import {TableRow} from "../UI/TableRow";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
+import {useLocalStorage} from "../services";
+import {TableRowProducts} from "../UI/TableRowProducts";
 
 export const WarehouseId = () => {
-	const [warehouse, setWarehouse] = useState()
-	const {id} = useParams()
+	const [warehouses, setWarehouses] = useLocalStorage({}, "warehouses")
+	const [product, setProduct] = useLocalStorage({}, "checkProduct")
+	const [currentWarehouse, setCurrentWarehouse] = useLocalStorage({}, "currentWarehouse")
+	//const {id} = useParams()
 
+	/*
 	useEffect(() => {
 		axios.get(`http://localhost:5000/warehouses/${id}`)
-			.then(res => setWarehouse(res.data))
+			.then(res => setCurrentWarehouse(res.data))
 	}, [])
+	*/
 
 	return (
-			<div>
-				<header className={styles.headerContent}>
-					<h1>{warehouse && warehouse.title}</h1>
-					<div className={styles.rightSideHeader}>
-						<select>
-							<option>Filter by</option>
-						</select>
-						<SelectIconSvg/>
-						<ButtonAdd text={"Add a warehouse"}/>
-					</div>
-				</header>
-				<div className={styles.tableContainer}>
-					<table>
-						<TableHeader col1={"All stores"}
-						             col2={"Manufacturer"}
-						             col3={"Item number"}
-						             col4={"Purchasing technology"}
-						             col5={"Shipment method"}/>
-						<tbody>
-						{
-							warehouse && warehouse.products.map(product =>
-								<TableRow col1={product.productName}
-								          col2={product.manufacturer}
-								          col3={product.itemNumber}
-								          col4={product.purchasingTechnology}
-								          col5={product.shipmentMethod}/>)
-						}
-						</tbody>
-					</table>
+		<div>
+			<header className={styles.headerContent}>
+				<h1>{currentWarehouse.title}</h1>
+				<div className={styles.rightSideHeader}>
+					<select>
+						<option>Filter by</option>
+					</select>
+					<SelectIconSvg/>
+					<ButtonAdd text={"Add a warehouse"}/>
 				</div>
+			</header>
+			<div className={styles.tableContainer}>
+				<table>
+					<TableHeader col1={"All stores"}
+					             col2={"Manufacturer"}
+					             col3={"Item number"}
+					             col4={"Purchasing technology"}
+					             col5={"Shipment method"}/>
+					<tbody>
+					{
+						currentWarehouse.products.map(product =>
+							<TableRowProducts key={product.id} obj={product}/>)
+					}
+					</tbody>
+				</table>
 			</div>
+		</div>
 	)
 }

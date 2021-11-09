@@ -18,7 +18,6 @@ export const SingUpModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
 
 	useEffect(() => {
 		if ((!isEmailError && !isPasswordError) && email) {
-			console.log("add new user")
 			const newUser = {"email": email, "password": password}
 			setUsers([...users, newUser])
 			setIsRegistered(true)
