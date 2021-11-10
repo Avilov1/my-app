@@ -54,7 +54,7 @@ export const data = {
 					"itemNumber": "C88806",
 					"purchasingTechnology": "S",
 					"shipmentMethod": "AIR"
-				},
+				}
 			]
 		},
 		{
@@ -95,7 +95,7 @@ export const data = {
 					"itemNumber": "C88104",
 					"purchasingTechnology": "S",
 					"shipmentMethod": "SEA"
-				},
+				}
 			]
 		},
 		{
@@ -120,7 +120,7 @@ export const data = {
 					"itemNumber": "C88102",
 					"purchasingTechnology": "S",
 					"shipmentMethod": "SEA"
-				},
+				}
 			]
 		},
 		{
@@ -161,7 +161,7 @@ export const data = {
 					"itemNumber": "C88104",
 					"purchasingTechnology": "S",
 					"shipmentMethod": "SEA"
-				},
+				}
 			]
 		}
 	]

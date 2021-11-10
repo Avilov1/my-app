@@ -1,33 +1,45 @@
-import {Checkbox} from "./Checkbox";
+import {CheckboxWarehouse} from "./CheckboxWarehouse";
 import styles from "./styles/TableRow.module.scss"
-import {useHistory, useLocation, useParams, useRouteMatch} from "react-router-dom";
-import {useEffect} from "react";
-import {useLocalStorage, useToggle} from "../services";
+import {useHistory, useLocation} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {useWarehousesContext} from "../context/warehousesContext";
 
 export const TableRowWarehouses = ({obj}) => {
-	const [isActive, toggleIsActive] = useToggle(false)
-	const [checkWarehouse, setCheckWarehouse] = useLocalStorage({}, "checkWarehouse")
-	const [currentWarehouse, setCurrentWarehouse] = useLocalStorage({}, "currentWarehouse")
+	const [isActive, setActive] = useState(false)
 	const history = useHistory()
 	const {pathname} = useLocation()
 	const {title, length, width, height, products, id} = obj
+	const {checkWarehouses, setCheckWarehouses, setCurrentWarehouse} = useWarehousesContext()
 
 	useEffect(() => {
+		!checkWarehouses && checkWarehouses(true)
+	}, [])
+
+	useEffect(() => {
+		const removeCheckWarehouse = () => {
+			const filterArr = checkWarehouses && checkWarehouses.filter(warehouse => warehouse.id !== obj.id)
+			return filterArr
+		}
 		isActive
-			? setCheckWarehouse(obj)
-			: setCheckWarehouse("")
+			? checkIsDuplicate(obj.id) ? setCheckWarehouses([...checkWarehouses]) : setCheckWarehouses([...checkWarehouses, obj])
+			: setCheckWarehouses(removeCheckWarehouse())
 	}, [isActive])
 
-	const clickOnWarehouse = async () => {
-		await setCurrentWarehouse(obj)
-		await history.push(`${pathname}/${id}`)
+	const checkIsDuplicate = (id) => {
+		const result = checkWarehouses.some(item => item.id === id)
+		return result
+	}
+
+	const clickOnWarehouse = () => {
+		setCurrentWarehouse(obj)
+		history.push(`${pathname}/${id}`)
 	}
 
 	return (
 		<tr className={styles.tr} onClick={clickOnWarehouse}>
 			<td className={styles.td}>
 				<div>
-					<Checkbox toggleIsActive={toggleIsActive} isActive={isActive}/>
+					<CheckboxWarehouse setActive={setActive} isActive={isActive} id={obj.id}/>
 					<span>
 					{title}
 				</span>
@@ -35,7 +47,6 @@ export const TableRowWarehouses = ({obj}) => {
 			</td>
 			<td className={styles.td}>
 				{products.length ? products.length : 0}
-
 			</td>
 			<td className={styles.td}>
 				{length}

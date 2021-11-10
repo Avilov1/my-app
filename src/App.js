@@ -1,7 +1,7 @@
 import React from "react";
 import {Redirect, Route, Switch} from "react-router-dom";
 
-import {useAuthContext} from "./context";
+import {useAuthContext} from "./context/authContext";
 import {privateRoutes, publicRoutes} from "./routes";
 
 import './App.css';

@@ -2,7 +2,7 @@ import {useState} from "react";
 import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import {useLocalStorage, useInput, validate, errorMessages} from "../services";
 import styles from "./styles/AuthModal.module.scss"
-import {useAuthContext} from "../context";
+import {useAuthContext} from "../context/authContext";
 
 export const LoginModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
     const [email, onChangeMail] = useInput("")

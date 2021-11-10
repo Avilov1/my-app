@@ -1,4 +1,4 @@
-import {Checkbox} from "./Checkbox";
+import {CheckboxWarehouse} from "./CheckboxWarehouse";
 import styles from "./styles/TableHeader.module.scss"
 
 export const TableHeader = ({col1, col2, col3, col4, col5}) => {
@@ -7,7 +7,7 @@ export const TableHeader = ({col1, col2, col3, col4, col5}) => {
 		<tr className={styles.tr} width={200}>
 			<th className={styles.th} width={200}>
 				<div>
-					<Checkbox/>
+					<CheckboxWarehouse/>
 					<span>{col1}</span>
 				</div>
 			</th>

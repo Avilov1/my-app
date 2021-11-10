@@ -3,31 +3,20 @@ import {SelectIconSvg} from "../UI/assets/svg";
 import {ButtonAdd} from "../UI";
 import {TableHeader} from "../UI/TableHeader";
 import {TableRowWarehouses} from "../UI/TableRowWarehouses";
-import {useEffect, useState} from "react";
-import axios from "axios";
-import {useHistory, useLocation} from "react-router-dom";
-import {useLocalStorage, useToggle} from "../services";
+import {useEffect} from "react";
+import {useToggle} from "../services";
 import {WarehouseAddModal} from "./WarehouseAddModal";
 import {data} from "../mock/mock";
+import {useWarehousesContext} from "../context/warehousesContext";
+import {WarehouseEditModal} from "./WarehouseEditModal";
 
 export const Warehouses = () => {
 	const [isVisibleAddPopup, toggleIsVisibleAddPopup] = useToggle(false)
-	const [warehouses, setWarehouses] = useLocalStorage(data.warehouses, "warehouses")
-	//const history = useHistory()
-	//const {pathname} = useLocation()
-	//const [warehouses, setWarehouses] = useState()
+	const {warehouses, setWarehouses, isEditWarehouse} = useWarehousesContext()
 
 	useEffect(() => {
-		const storage = localStorage.getItem("warehouses")
-		setWarehouses(JSON.parse(storage))
-	}, [isVisibleAddPopup])
-
-	/*
-	useEffect(() => {
-		axios.get("http://localhost:5000/warehouses")
-			.then(res => setWarehouses(res.data))
+		!warehouses && setWarehouses(data.warehouses)
 	}, [])
-	*/
 
 	return (
 		<div>
@@ -35,7 +24,9 @@ export const Warehouses = () => {
 				isVisibleAddPopup &&
 				<WarehouseAddModal
 					isVisible={isVisibleAddPopup}
-					toggleIsVisible={toggleIsVisibleAddPopup}/>}
+					toggleIsVisible={toggleIsVisibleAddPopup}/>
+			}
+			{isEditWarehouse && <WarehouseEditModal/>}
 
 			<header className={styles.headerContent}>
 				<h1>Warehouses</h1>
@@ -60,7 +51,6 @@ export const Warehouses = () => {
 						warehouses && warehouses.map(warehouse =>
 							<TableRowWarehouses
 								key={warehouse.id}
-								//onClick={() => clickOnWarehouse(warehouse.id)}
 								obj={warehouse}
 							/>
 						)

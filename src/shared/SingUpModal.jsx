@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {ModalContainer, ModalInput, ModalButton} from "../UI";
 import {useInput, useLocalStorage, validate, errorMessages} from "../services";
 import styles from "./styles/AuthModal.module.scss"
-import {useAuthContext} from "../context";
+import {useAuthContext} from "../context/authContext";
 
 export const SingUpModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
 	const [email, onChangeMail] = useInput("")

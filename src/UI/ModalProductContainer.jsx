@@ -1,7 +1,7 @@
 import styles from './styles/ModalContainer.module.scss'
 import {CloseFormSvg} from "./assets/svg";
 
-export const ModalContainer = (props) => {
+export const ModalProductContainer = (props) => {
 	const {isVisible, toggleIsVisible, title, children, onSubmit} = props
 	const modalClass = [styles.modal]
 

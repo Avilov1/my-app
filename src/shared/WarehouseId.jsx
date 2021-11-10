@@ -2,27 +2,24 @@ import styles from "./styles/Warehouses.module.scss";
 import {SelectIconSvg} from "../UI/assets/svg";
 import {ButtonAdd} from "../UI";
 import {TableHeader} from "../UI/TableHeader";
-import axios from "axios";
-import {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
-import {useLocalStorage} from "../services";
+import {useLocalStorage, useToggle} from "../services";
 import {TableRowProducts} from "../UI/TableRowProducts";
+import {useWarehousesContext} from "../context/warehousesContext";
+import {ProductAddModal} from "./ProductAddModal";
 
 export const WarehouseId = () => {
-	const [warehouses, setWarehouses] = useLocalStorage({}, "warehouses")
-	const [product, setProduct] = useLocalStorage({}, "checkProduct")
-	const [currentWarehouse, setCurrentWarehouse] = useLocalStorage({}, "currentWarehouse")
-	//const {id} = useParams()
-
-	/*
-	useEffect(() => {
-		axios.get(`http://localhost:5000/warehouses/${id}`)
-			.then(res => setCurrentWarehouse(res.data))
-	}, [])
-	*/
+	const [isVisibleAddProductPopup, toggleIsVisibleAddProductPopup] = useToggle(false)
+	const {currentWarehouse, setCurrentWarehouse} = useWarehousesContext()
 
 	return (
 		<div>
+			{
+				isVisibleAddProductPopup &&
+				<ProductAddModal
+					isVisible={isVisibleAddProductPopup}
+					toggleIsVisible={toggleIsVisibleAddProductPopup}/>
+			}
+
 			<header className={styles.headerContent}>
 				<h1>{currentWarehouse.title}</h1>
 				<div className={styles.rightSideHeader}>
@@ -30,7 +27,7 @@ export const WarehouseId = () => {
 						<option>Filter by</option>
 					</select>
 					<SelectIconSvg/>
-					<ButtonAdd text={"Add a warehouse"}/>
+					<ButtonAdd text={"Add a product"} onClick={toggleIsVisibleAddProductPopup}/>
 				</div>
 			</header>
 			<div className={styles.tableContainer}>

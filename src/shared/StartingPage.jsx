@@ -5,7 +5,7 @@ import track1 from "../UI/assets/img/track1.png"
 import styles from './styles/StartingPage.module.scss'
 import {ScrollEllipseSvg} from "../UI/assets/svg";
 import {useEffect} from "react";
-import {useAuthContext} from "../context";
+import {useAuthContext} from "../context/authContext";
 
 export const StartingPage = () => {
 	const [isLoginVisible, toggleIsLoginVisible] = useToggle(false)

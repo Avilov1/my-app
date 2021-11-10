@@ -1,58 +1,54 @@
-import {Checkbox} from "./Checkbox";
+import {CheckboxWarehouse} from "./CheckboxWarehouse";
 import styles from "./styles/TableRow.module.scss"
 import {useHistory, useLocation} from "react-router-dom";
-import {useEffect} from "react";
-import {useLocalStorage, useToggle} from "../services";
+import {useEffect, useState} from "react";
+import {useWarehousesContext} from "../context/warehousesContext";
+import {CheckboxProduct} from "./CheckboxProduct";
 
 export const TableRowProducts = ({obj}) => {
-	const [isActive, toggleIsActive] = useToggle(false)
-	const [currentWarehouse, setCurrentWarehouse] = useLocalStorage({}, "currentWarehouse")
-	const [checkProduct, setCheckProduct] = useLocalStorage({}, "checkProduct")
-	const history = useHistory()
-	const {pathname} = useLocation()
-	const {title, products} = currentWarehouse
-	console.log('===>checkedWarehouse', checkProduct);
+	const [isActive, setIsActive] = useState(false)
+	const {checkProducts, setCheckProducts, currentWarehouse} = useWarehousesContext()
 
 	useEffect(() => {
+		!checkProducts && checkProducts(true)
+	}, [])
+
+	useEffect(() => {
+		const removeCheckProduct = () => {
+			const filterArr = checkProducts && checkProducts.filter(prod => prod.id !== obj.id)
+			return filterArr
+		}
 		isActive
-			? setCheckProduct(obj)
-			: setCheckProduct("")
+			? checkIsDuplicate(obj.id) ? setCheckProducts([...checkProducts]) : setCheckProducts([...checkProducts, obj])
+			: setCheckProducts(removeCheckProduct())
 	}, [isActive])
 
-//id, productName, manufacturer, itemNumber, purchasingTechnology, shipmentMethod = che
+	const checkIsDuplicate = (id) => {
+		const result = checkProducts.some(item => item.id === id)
+		return result
+	}
 
 	return (
 		<tr className={styles.tr}>
 			<td className={styles.td}>
 				<div>
-					<Checkbox toggleIsActive={toggleIsActive} isActive={isActive}/>
+					<CheckboxProduct setActive={setIsActive} isActive={isActive} id={obj.id}/>
 					<span>
-					{
-						obj.productName
-						}
+					{obj.productName}
 				</span>
 				</div>
 			</td>
 			<td className={styles.td}>
-				{
-					obj.manufacturer
-				}
-
+				{obj.manufacturer}
 			</td>
 			<td className={styles.td}>
-				{
-					obj.itemNumber
-				}
+				{obj.itemNumber}
 			</td>
 			<td className={styles.td}>
-				{
-					obj.purchasingTechnology
-				}
+				{obj.purchasingTechnology}
 			</td>
 			<td className={styles.td}>
-				{
-					obj.shipmentMethod
-				}
+				{obj.shipmentMethod}
 			</td>
 		</tr>
 	)

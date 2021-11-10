@@ -1,33 +1,49 @@
-import {useEffect, useState} from "react";
-import axios from "axios";
-import {ModalContainer, ModalButton, ModalInput} from "../UI";
-import {useInput, errorMessages, useLocalStorage} from "../services";
-import styles from "./styles/AuthModal.module.scss"
+import {useState} from "react";
 import {useWarehousesContext} from "../context/warehousesContext";
+import {useInput, errorMessages} from "../services";
+import {ModalContainer, ModalButton, ModalInput} from "../UI";
+import styles from "./styles/AuthModal.module.scss"
 
-export const WarehouseAddModal = ({isVisible, toggleIsVisible}) => {
-	const [title, onChangeTitle] = useInput("")
-	const [length, onChangeLength] = useInput("")
-	const [width, onChangeWidth] = useInput("")
-	const [height, onChangeHeight] = useInput("")
+export const WarehouseEditModal = () => {
+	const {warehouses, setWarehouses, isEditWarehouse, setIsEditWarehouse, checkWarehouses, setCheckWarehouses} = useWarehousesContext()
+	const [title, onChangeTitle] = useInput(checkWarehouses[0].title)
+	const [length, onChangeLength] = useInput(checkWarehouses[0].length)
+	const [width, onChangeWidth] = useInput(checkWarehouses[0].width)
+	const [height, onChangeHeight] = useInput(checkWarehouses[0].height)
 	const [isTitleError, setIsTitleError] = useState(null)
 	const [isLengthError, setIsLengthError] = useState(null)
 	const [isWidthError, setIsWidthError] = useState(null)
 	const [isHeightError, setIsHeightError] = useState(null)
 	const [messageError, setMessageError] = useState(null)
-	const {warehouses, setWarehouses} = useWarehousesContext()
 
-	const addWarehouse = () => {
-		const id = Date.now()
-		const products = []
-		const newWarehouse = {id, title, length, width, height, products}
-		const newState = [...warehouses, newWarehouse]
+	const editWarehouse = () => {
+		const newState = warehouses.map(warehouse => {
+			if (warehouse.id === checkWarehouses[0].id) {
+				return {
+					...warehouse, title, length, width, height
+				}
+			} else {
+				return warehouse
+			}
+		})
+
+		const newCheckState = checkWarehouses.map(warehouse => {
+			if (warehouse.id === checkWarehouses[0].id) {
+				return {
+					...warehouse, title, length, width, height
+				}
+			} else {
+				return warehouse
+			}
+		})
+
 		setWarehouses(newState)
-		toggleIsVisible()
+		setCheckWarehouses(newCheckState)
+		setIsEditWarehouse(false)
 	}
 
 	const checkForm = (value, error, message) => {
-		if (value.length <= 0) {
+		if (value.length <= 0 || "") {
 			error(true)
 			message(errorMessages.valueIsEmpty)
 		} else {
@@ -38,21 +54,20 @@ export const WarehouseAddModal = ({isVisible, toggleIsVisible}) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault()
+
 		checkForm(title, setIsTitleError, setMessageError)
 		checkForm(length, setIsLengthError, setMessageError)
 		checkForm(width, setIsWidthError, setMessageError)
 		checkForm(height, setIsHeightError, setMessageError)
 
 		if ((title && width && length && height)) {
-			addWarehouse()
+			editWarehouse()
 		}
 	}
 
-	console.log("wqdgdd")
-
 	return (
-		<ModalContainer isVisible={isVisible}
-		                toggleIsVisible={toggleIsVisible}
+		<ModalContainer isVisible={isEditWarehouse}
+		                toggleIsVisible={() => setIsEditWarehouse(false)}
 		                title={"Adding a warehouse"}
 		                onSubmit={handleSubmit}>
 
