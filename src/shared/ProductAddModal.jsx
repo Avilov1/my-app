@@ -1,8 +1,8 @@
+import {useWarehousesContext} from "../context/warehousesContext";
 import {useState} from "react";
 import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import {useInput, errorMessages,} from "../services";
 import styles from "./styles/AuthModal.module.scss"
-import {useWarehousesContext} from "../context/warehousesContext";
 import {ModalCheckRow} from "../UI/modalCheckRow";
 import {
 	AirMethodSvg,
@@ -239,7 +239,9 @@ export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 				                onSubmit={handleSubmit}>
 
 					<div className={styles.modalInputs}>
-						<CargoSuccessSvg width={224} height={224}/>
+						<div className={styles.imgCenter}>
+							<CargoSuccessSvg width={224} height={224}/>
+						</div>
 						<ModalButton text={"Continue"} type={"submit"}/>
 					</div>
 				</ModalContainer>
