@@ -54,7 +54,7 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 			}
 		}))
 		setCurrentWarehouse(newFromWarehouse)
-		setCheckProducts(newFromWarehouseProducts)
+		setCheckProducts([])
 		toggleIsVisible()
 	}
 

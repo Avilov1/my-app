@@ -27,6 +27,7 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 	const [purchasingTechnology, setPurchasingTechnology] = useState(checkProducts[0].purchasingTechnology)
 	const [shipmentMethod, setShipmentMethod] = useState(checkProducts[0].shipmentMethod)
 	const [paymentMethod, setPaymentMethod] = useState("visa")
+	console.log(checkProducts)
 
 	const editProduct = () => {
 		const newProducts = currentWarehouse.products.map(product => {
@@ -84,7 +85,7 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 				{step === 1 &&
 				<ModalContainer isVisible={isVisible}
 				                toggleIsVisible={toggleIsVisible}
-				                title={"Adding a product"}
+				                title={"Edit a product"}
 				                submit={handleSubmit}
 				>
 					<div className={styles.modalInputs}>
@@ -132,15 +133,15 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 							<div
 								className="radio-btn"
 								onClick={() => {
-									setPurchasingTechnology("B");
+									setPurchasingTechnology("S");
 								}}
 							>
-								B
+								S
 								<input
 									type="radio"
 									value={purchasingTechnology}
 									name="purchaseTechnology"
-									checked={purchasingTechnology === "B"}
+									checked={purchasingTechnology === "S"}
 								/>
 							</div>
 							<div
@@ -184,20 +185,20 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 				                title={"Shipping method"}
 				>
 					<div className={styles.modalInputs}>
-						<div onClick={() => (setShipmentMethod("air"))}>
-							<ModalCheckRow isActive={shipmentMethod === "air"}>
+						<div onClick={() => (setShipmentMethod("AIR"))}>
+							<ModalCheckRow isActive={shipmentMethod === "AIR"}>
 								<AirMethodSvg width={24} height={24}/>
 								By air transport
 							</ModalCheckRow>
 						</div>
-						<div onClick={() => (setShipmentMethod("sea"))}>
-							<ModalCheckRow isActive={shipmentMethod === "sea"}>
+						<div onClick={() => (setShipmentMethod("SEA"))}>
+							<ModalCheckRow isActive={shipmentMethod === "SEA"}>
 								<SeaMethodSvg width={24} height={24}/>
 								By sea
 							</ModalCheckRow>
 						</div>
-						<div onClick={() => (setShipmentMethod("truck"))}>
-							<ModalCheckRow isActive={shipmentMethod === "truck"}>
+						<div onClick={() => (setShipmentMethod("TRUCK"))}>
+							<ModalCheckRow isActive={shipmentMethod === "TRUCK"}>
 								<TruckMethodSvg width={24} height={24}/>
 								By car
 							</ModalCheckRow>
