@@ -5,8 +5,9 @@ import {useWarehousesContext} from "../context/warehousesContext";
 import {useEffect, useState} from "react";
 
 export const CheckboxProduct = ({isActive, setActive, id}) => {
+	console.log("render box")
 
-	const {checkProducts, isEditProduct} = useWarehousesContext()
+	const {checkProducts, setCheckbox} = useWarehousesContext()
 
 	const classNames = classnames(styles.border, {[styles.active]: isActive})
 

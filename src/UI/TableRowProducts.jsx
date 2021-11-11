@@ -1,17 +1,19 @@
-import {CheckboxWarehouse} from "./CheckboxWarehouse";
-import styles from "./styles/TableRow.module.scss"
-import {useHistory, useLocation} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {useWarehousesContext} from "../context/warehousesContext";
 import {CheckboxProduct} from "./CheckboxProduct";
+import styles from "./styles/TableRow.module.scss"
 
 export const TableRowProducts = ({obj}) => {
 	const [isActive, setIsActive] = useState(false)
 	const {checkProducts, setCheckProducts, currentWarehouse} = useWarehousesContext()
 
 	useEffect(() => {
-		!checkProducts && checkProducts(true)
-	}, [])
+		if (checkProducts.some(prod => prod.id === obj.id)) {
+			setIsActive(true)
+		} else {
+			setIsActive(false)
+		}
+	}, [checkProducts])
 
 	useEffect(() => {
 		const removeCheckProduct = () => {

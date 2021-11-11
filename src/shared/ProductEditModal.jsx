@@ -1,9 +1,9 @@
 import {useState} from "react";
-import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import {useInput, errorMessages,} from "../services";
-import styles from "./styles/AuthModal.module.scss"
 import {useWarehousesContext} from "../context/warehousesContext";
 import {ModalCheckRow} from "../UI/modalCheckRow";
+import {ModalContainer, ModalButton, ModalInput} from "../UI";
+import styles from "./styles/AuthModal.module.scss"
 import {AirMethodSvg, CargoSuccessSvg, SeaMethodSvg, TruckMethodSvg} from "../UI/assets/svg";
 
 export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
@@ -40,19 +40,8 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 		})
 
 		setWarehouses(newState)
-		setCheckProducts([...newProducts])
+		setCheckProducts([])
 		setCurrentWarehouse({...currentWarehouse, products: [...newProducts]})
-
-		/* edit func
-		const newState = warehouses.map(warehouse => {
-			if (warehouse.id === currentWarehouse.id) {
-				const addedProductWarehouse = {...warehouse, products: [...warehouse.products, newProduct]}
-				return addedProductWarehouse
-			} else {
-				return warehouse
-			}
-		})
-		*/
 
 		toggleIsVisible()
 	}
