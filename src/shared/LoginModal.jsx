@@ -24,7 +24,7 @@ export const LoginModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        if (validate.email(email) && validate.password(password)) {
+        if (validate.email(email) && validate.password(password) && usersData.length > 0) {
             usersData.some(user => {
                 if (user.email === email && user.password === password) {
                     setIsAuth(true)
@@ -36,25 +36,6 @@ export const LoginModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
         } else  {
             formError()
         }
-        /*
-        if ((!isEmailError && !isPasswordError && (email && password))) {
-            console.log("not error, email = password")
-            usersData.some(user => {
-                if (user.email === email && user.password === password) {
-                    console.log("pass === pass, email === email")
-                    setIsAuth(true)
-                } else {
-                    setIsPasswordError(true)
-                    setIsEmailError(true)
-                    setPasswordMessageError(errorMessages.emailOrPasswordError)
-                    setEmailMessageError(errorMessages.emailOrPasswordError)
-                }
-            })
-        }
-
-         */
-
-
     }
 
     return (
