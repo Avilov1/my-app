@@ -6,29 +6,33 @@ import {useWarehousesContext} from "../context/warehousesContext";
 import {ModalCheckRow} from "../UI/modalCheckRow";
 import {AirMethodSvg, CargoSuccessSvg, SeaMethodSvg, TruckMethodSvg} from "../UI/assets/svg";
 
-export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
-	// steps
+export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
+	const {warehouses, setWarehouses, currentWarehouse, setCurrentWarehouse, checkProducts, setCheckProducts} = useWarehousesContext()
 	const [step, setStep] = useState(1)
-	const [productName, onChangeProductName] = useInput("")
-	const [manufacturer, onChangeManufacturer] = useInput("")
-	const [itemNumber, onChangeItemNumber] = useInput("")
+	const [productName, onChangeProductName] = useInput(checkProducts[0].productName)
+	const [manufacturer, onChangeManufacturer] = useInput(checkProducts[0].manufacturer)
+	const [itemNumber, onChangeItemNumber] = useInput(checkProducts[0].itemNumber)
 	const [isProductError, setIsProductError] = useState(null)
 	const [isManufacturerError, setIsManufacturerError] = useState(null)
 	const [isItemNumberError, setIsItemNumberError] = useState(null)
 	const [messageError, setMessageError] = useState(null)
-	const [purchasingTechnology, setPurchasingTechnology] = useState("A")
-	const [shipmentMethod, setShipmentMethod] = useState("air")
+	const [purchasingTechnology, setPurchasingTechnology] = useState(checkProducts[0].purchasingTechnology)
+	const [shipmentMethod, setShipmentMethod] = useState(checkProducts[0].shipmentMethod)
 	const [paymentMethod, setPaymentMethod] = useState("visa")
-	const {warehouses, setWarehouses, currentWarehouse, setCurrentWarehouse} = useWarehousesContext()
 
-	const addProduct = () => {
-		const id = Date.now()
-		const newProduct = {id, itemNumber, manufacturer, productName, purchasingTechnology, shipmentMethod}
+	const editProduct = () => {
+		const newProducts = currentWarehouse.products.map(product => {
+			if (product.id === checkProducts[0].id) {
+				const newProduct = {...product, itemNumber, manufacturer, productName, purchasingTechnology, shipmentMethod}
+				return newProduct
+			} else {
+				return product
+			}
+		})
 
 		const newState = warehouses.map(warehouse => {
 			if (warehouse.id === currentWarehouse.id) {
-				const addedProductWarehouse = {...warehouse, products: [...warehouse.products, newProduct]}
-				setCurrentWarehouse(addedProductWarehouse)
+				const addedProductWarehouse = {...warehouse, products: [...newProducts]}
 				return addedProductWarehouse
 			} else {
 				return warehouse
@@ -36,6 +40,20 @@ export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 		})
 
 		setWarehouses(newState)
+		setCheckProducts([...newProducts])
+		setCurrentWarehouse({...currentWarehouse, products: [...newProducts]})
+
+		/* edit func
+		const newState = warehouses.map(warehouse => {
+			if (warehouse.id === currentWarehouse.id) {
+				const addedProductWarehouse = {...warehouse, products: [...warehouse.products, newProduct]}
+				return addedProductWarehouse
+			} else {
+				return warehouse
+			}
+		})
+		*/
+
 		toggleIsVisible()
 	}
 
@@ -60,7 +78,7 @@ export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault()
-		addProduct()
+		editProduct()
 	}
 
 	return (

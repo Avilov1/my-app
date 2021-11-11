@@ -16,7 +16,7 @@ export const ModalContainer = (props) => {
 					<span>{title}</span>
 				</div>
 				<div className={styles.modalContent}>
-					<form onSubmit={onSubmit} noValidate={true}>
+					<form onSubmit={onSubmit}>
 						{children}
 					</form>
 				</div>

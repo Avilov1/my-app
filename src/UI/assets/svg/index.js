@@ -15,6 +15,12 @@ import {ReactComponent as SelectIconSvg} from "./selectIcon.svg";
 import {ReactComponent as CheckboxIconSvg} from "./checkBoxIcon.svg";
 import {ReactComponent as SelectSvg} from "./select.svg";
 import {ReactComponent as MoveSvg} from "./move.svg";
+import {ReactComponent as CheckCircleSvg} from "./checkCircle.svg";
+import {ReactComponent as SeaMethodSvg} from "./seaMethod.svg";
+import {ReactComponent as AirMethodSvg} from "./airMethod.svg";
+import {ReactComponent as TruckMethodSvg} from "./truckMethod.svg";
+import {ReactComponent as CargoSuccessSvg} from "./curgoSuccess.svg";
+import {ReactComponent as MoveSuccessSvg} from "./moveSuccess.svg";
 
 export {
 	ProfileSvg,
@@ -34,4 +40,10 @@ export {
 	CheckboxIconSvg,
 	SelectSvg,
   MoveSvg,
+	CheckCircleSvg,
+	SeaMethodSvg,
+	TruckMethodSvg,
+	AirMethodSvg,
+	CargoSuccessSvg,
+	MoveSuccessSvg
 }

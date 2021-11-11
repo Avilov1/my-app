@@ -34,6 +34,10 @@
     display: flex;
     gap: 16px;
 
+    button {
+      cursor: pointer;
+    }
+
     .moveBtn {
       display: flex;
       align-items: center;

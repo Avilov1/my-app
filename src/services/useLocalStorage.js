@@ -10,8 +10,6 @@ export const useLocalStorage = (initialValue, key) => {
         }
     }
 
-    // localStorage.setItem("warehouses", JSON.stringify([...warehouses, newWarehouse]))
-
     const [value, setValue] = useState(getValue)
 
     useEffect(() => {

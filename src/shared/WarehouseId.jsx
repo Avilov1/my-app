@@ -1,23 +1,40 @@
-import styles from "./styles/Warehouses.module.scss";
-import {SelectIconSvg} from "../UI/assets/svg";
+import {useWarehousesContext} from "../context/warehousesContext";
 import {ButtonAdd} from "../UI";
 import {TableHeader} from "../UI/TableHeader";
-import {useLocalStorage, useToggle} from "../services";
-import {TableRowProducts} from "../UI/TableRowProducts";
-import {useWarehousesContext} from "../context/warehousesContext";
 import {ProductAddModal} from "./ProductAddModal";
+import {TableRowProducts} from "../UI/TableRowProducts";
+import {useToggle} from "../services";
+import styles from "./styles/Warehouses.module.scss";
+import {SelectIconSvg} from "../UI/assets/svg";
+import {ProductMoveModal} from "./ProductMoveModal";
+import {ProductEditModal} from "./ProductEditModal";
 
 export const WarehouseId = () => {
+	const {currentWarehouse, isMoveProducts, toggleIsMoveProducts, isEditProduct, toggleIsEditProduct} = useWarehousesContext()
 	const [isVisibleAddProductPopup, toggleIsVisibleAddProductPopup] = useToggle(false)
-	const {currentWarehouse, setCurrentWarehouse} = useWarehousesContext()
 
 	return (
 		<div>
 			{
 				isVisibleAddProductPopup &&
+
 				<ProductAddModal
 					isVisible={isVisibleAddProductPopup}
 					toggleIsVisible={toggleIsVisibleAddProductPopup}/>
+			}
+			{
+				isMoveProducts &&
+
+				<ProductMoveModal
+					isVisible={isMoveProducts}
+					toggleIsVisible={toggleIsMoveProducts}/>
+			}
+			{
+				isEditProduct &&
+
+				<ProductEditModal
+					isVisible={isEditProduct}
+					toggleIsVisible={toggleIsEditProduct}/>
 			}
 
 			<header className={styles.headerContent}>

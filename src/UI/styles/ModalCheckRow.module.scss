@@ -1,0 +1,39 @@
+@import "./src/index";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 18px;
+  align-items: center;
+  width: 300px;
+  height: 60px;
+  background-color: #F8F9F9;
+
+  .leftSide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 14px;
+    color: rgba(62, 76, 89, 0.4);
+
+
+
+
+    svg {
+      path {
+        stroke: currentColor;
+        fill: transparent;
+      }
+    }
+
+  }
+}
+
+.active {
+  color: $orange;
+  background-color: #FEF5E7;
+}
+
+

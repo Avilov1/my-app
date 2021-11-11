@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 
 export const CheckboxProduct = ({isActive, setActive, id}) => {
 
-	const {checkProducts} = useWarehousesContext()
+	const {checkProducts, isEditProduct} = useWarehousesContext()
 
 	const classNames = classnames(styles.border, {[styles.active]: isActive})
 
