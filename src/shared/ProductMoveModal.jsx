@@ -4,7 +4,15 @@ import {useInput, errorMessages,} from "../services";
 import styles from "./styles/AuthModal.module.scss"
 import {useWarehousesContext} from "../context/warehousesContext";
 import {ModalCheckRow} from "../UI/modalCheckRow";
-import {AirMethodSvg, CargoSuccessSvg, MoveSuccessSvg, SeaMethodSvg, TruckMethodSvg} from "../UI/assets/svg";
+import {
+	AirMethodSvg,
+	CargoSuccessSvg, CashSvg,
+	MoveSuccessSvg,
+	PaypalSvg,
+	SeaMethodSvg,
+	TruckMethodSvg,
+	VisaSvg
+} from "../UI/assets/svg";
 import {ModalSelect} from "../UI/ModalSelect";
 
 export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
@@ -115,19 +123,19 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 					<div className={styles.modalInputs}>
 						<div onClick={() => (setPaymentMethod("visa"))}>
 							<ModalCheckRow isActive={paymentMethod === "visa"}>
-								<AirMethodSvg width={24} height={24}/>
+								<VisaSvg width={24} height={24}/>
 								Visa, Mastercard
 							</ModalCheckRow>
 						</div>
 						<div onClick={() => (setPaymentMethod("paypal"))}>
 							<ModalCheckRow isActive={paymentMethod === "paypal"}>
-								<SeaMethodSvg width={24} height={24}/>
+								<PaypalSvg width={24} height={24}/>
 								Paypal
 							</ModalCheckRow>
 						</div>
 						<div onClick={() => (setPaymentMethod("cash"))}>
 							<ModalCheckRow isActive={paymentMethod === "cash"}>
-								<TruckMethodSvg width={24} height={24}/>
+								<CashSvg width={24} height={24}/>
 								Cash
 							</ModalCheckRow>
 						</div>

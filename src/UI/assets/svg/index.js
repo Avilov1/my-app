@@ -12,7 +12,7 @@ import {ReactComponent as NotificationsSvg} from "./notification.svg";
 import {ReactComponent as SearchSvg} from "./search.svg";
 import {ReactComponent as PlusSvg} from "./plus.svg";
 import {ReactComponent as SelectIconSvg} from "./selectIcon.svg";
-import {ReactComponent as CheckboxIconSvg} from "./checkBoxIcon.svg";
+import {ReactComponent as CheckboxIconSvg} from "./checkboxIcon.svg";
 import {ReactComponent as SelectSvg} from "./select.svg";
 import {ReactComponent as MoveSvg} from "./move.svg";
 import {ReactComponent as CheckCircleSvg} from "./checkCircle.svg";
@@ -21,29 +21,35 @@ import {ReactComponent as AirMethodSvg} from "./airMethod.svg";
 import {ReactComponent as TruckMethodSvg} from "./truckMethod.svg";
 import {ReactComponent as CargoSuccessSvg} from "./curgoSuccess.svg";
 import {ReactComponent as MoveSuccessSvg} from "./moveSuccess.svg";
+import {ReactComponent as VisaSvg} from "./visa.svg";
+import {ReactComponent as PaypalSvg} from "./paypal.svg";
+import {ReactComponent as CashSvg} from "./cash.svg";
 
 export {
-	ProfileSvg,
-	CloseFormSvg,
-	ScrollEllipseSvg,
-	ContactsSvg,
-	HomeSvg,
-	WarehousesSvg,
-	AccountsSvg,
-	ChatSvg,
-	CardsSvg,
-	SettingsSvg,
-	NotificationsSvg,
-	SearchSvg,
-	PlusSvg,
-	SelectIconSvg,
-	CheckboxIconSvg,
-	SelectSvg,
-  MoveSvg,
-	CheckCircleSvg,
-	SeaMethodSvg,
-	TruckMethodSvg,
-	AirMethodSvg,
-	CargoSuccessSvg,
-	MoveSuccessSvg
+    ProfileSvg,
+    CloseFormSvg,
+    ScrollEllipseSvg,
+    ContactsSvg,
+    HomeSvg,
+    WarehousesSvg,
+    AccountsSvg,
+    ChatSvg,
+    CardsSvg,
+    SettingsSvg,
+    NotificationsSvg,
+    SearchSvg,
+    PlusSvg,
+    SelectIconSvg,
+    CheckboxIconSvg,
+    SelectSvg,
+    MoveSvg,
+    CheckCircleSvg,
+    SeaMethodSvg,
+    TruckMethodSvg,
+    AirMethodSvg,
+    CargoSuccessSvg,
+    MoveSuccessSvg,
+    VisaSvg,
+    PaypalSvg,
+    CashSvg
 }
