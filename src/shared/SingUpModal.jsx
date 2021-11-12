@@ -35,7 +35,6 @@ export const SingUpModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
 			setIsEmailError(true)
 		}
 		if (users.some(user => user.email === email && validate.email(email))) {
-			console.log("validate mail")
 			setIsEmailError(true)
 			setEmailMessageError(errorMessages.emailAlreadyRegistered)
 		}
@@ -49,31 +48,6 @@ export const SingUpModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
 			setIsPasswordError(false)
 			setPasswordMessageError(null)
 		}
-
-		/*
-		if (validate.email(email)) {
-				setIsEmailError(false)
-				setEmailMessageError(null)
-
-		} else {
-				setEmailMessageError(errorMessages.emailIncorrect)
-				setIsEmailError(true)
-		}
-		if (users.some(user => user.email === email && validate.email(email))) {
-				console.log("validate mail")
-				setIsEmailError(true)
-				setEmailMessageError(errorMessages.emailAlreadyRegistered)
-		}
-		if (!validate.password(password)) {
-				setIsPasswordError(true)
-				setPasswordMessageError(errorMessages.passwordIncorrect)
-		} else if (validate.password(password) && password !== passwordConfirm) {
-				setIsPasswordError(true)
-				setPasswordMessageError(errorMessages.passwordMismatch)
-		} else if (validate.password(password) && password === passwordConfirm){
-				setIsPasswordError(false)
-				setPasswordMessageError(null)
-		} */
 	}
 
 	return (

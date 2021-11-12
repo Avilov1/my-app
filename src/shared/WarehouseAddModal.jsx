@@ -48,8 +48,6 @@ export const WarehouseAddModal = ({isVisible, toggleIsVisible}) => {
 		}
 	}
 
-	console.log("wqdgdd")
-
 	return (
 		<ModalContainer isVisible={isVisible}
 		                toggleIsVisible={toggleIsVisible}

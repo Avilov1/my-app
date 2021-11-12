@@ -1,6 +1,5 @@
-import styles from "./styles/ModalSelect.module.scss";
-import classnames from "classnames";
 import {useWarehousesContext} from "../context/warehousesContext";
+import styles from "./styles/ModalSelect.module.scss";
 
 export const ModalSelect = ({type, label, setValue, value}) => {
 	const {warehouses,currentWarehouse} = useWarehousesContext()

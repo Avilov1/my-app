@@ -27,7 +27,6 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 	const [purchasingTechnology, setPurchasingTechnology] = useState(checkProducts[0].purchasingTechnology)
 	const [shipmentMethod, setShipmentMethod] = useState(checkProducts[0].shipmentMethod)
 	const [paymentMethod, setPaymentMethod] = useState("visa")
-	console.log(checkProducts)
 
 	const editProduct = () => {
 		const newProducts = currentWarehouse.products.map(product => {

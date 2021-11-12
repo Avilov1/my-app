@@ -1,8 +1,8 @@
-import {CheckboxWarehouse} from "./CheckboxWarehouse";
-import styles from "./styles/TableRow.module.scss"
 import {useHistory, useLocation} from "react-router-dom";
 import {useEffect, useState} from "react";
+import {CheckboxWarehouse} from "./CheckboxWarehouse";
 import {useWarehousesContext} from "../context/warehousesContext";
+import styles from "./styles/TableRow.module.scss"
 
 export const TableRowWarehouses = ({obj}) => {
 	const [isActive, setActive] = useState(false)

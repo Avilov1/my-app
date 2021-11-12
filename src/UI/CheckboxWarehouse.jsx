@@ -2,7 +2,7 @@ import classnames from "classnames";
 import styles from "./styles/Checkbox.module.scss"
 import {CheckboxIconSvg} from "./assets/svg";
 import {useWarehousesContext} from "../context/warehousesContext";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 
 export const CheckboxWarehouse = ({isActive, setActive, id}) => {
 
