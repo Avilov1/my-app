@@ -38,7 +38,7 @@ export const WarehouseEditModal = () => {
 		})
 
 		setWarehouses(newState)
-		setCheckWarehouses(newCheckState)
+		setCheckWarehouses([])
 		setIsEditWarehouse(false)
 	}
 

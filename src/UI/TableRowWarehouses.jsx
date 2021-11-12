@@ -12,8 +12,12 @@ export const TableRowWarehouses = ({obj}) => {
 	const {checkWarehouses, setCheckWarehouses, setCurrentWarehouse} = useWarehousesContext()
 
 	useEffect(() => {
-		!checkWarehouses && checkWarehouses(true)
-	}, [])
+		if (checkWarehouses.some(prod => prod.id === obj.id)) {
+			setActive(true)
+		} else {
+			setActive(false)
+		}
+	}, [checkWarehouses])
 
 	useEffect(() => {
 		const removeCheckWarehouse = () => {
