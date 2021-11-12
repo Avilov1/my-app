@@ -12,10 +12,15 @@ import {WarehouseEditModal} from "./WarehouseEditModal";
 
 export const Warehouses = () => {
 	const [isVisibleAddPopup, toggleIsVisibleAddPopup] = useToggle(false)
-	const {warehouses, setWarehouses, isEditWarehouse} = useWarehousesContext()
+	const {warehouses, setWarehouses, isEditWarehouse, setCheckWarehouses} = useWarehousesContext()
 
 	useEffect(() => {
 		!warehouses && setWarehouses(data.warehouses)
+
+		return () => {
+			setCheckWarehouses([])
+		};
+
 	}, [])
 
 	return (

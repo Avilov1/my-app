@@ -1,4 +1,7 @@
+import {useEffect} from "react";
 import {useWarehousesContext} from "../context/warehousesContext";
+import {ProductMoveModal} from "./ProductMoveModal";
+import {ProductEditModal} from "./ProductEditModal";
 import {ButtonAdd} from "../UI";
 import {TableHeader} from "../UI/TableHeader";
 import {ProductAddModal} from "./ProductAddModal";
@@ -6,12 +9,16 @@ import {TableRowProducts} from "../UI/TableRowProducts";
 import {useToggle} from "../services";
 import styles from "./styles/Warehouses.module.scss";
 import {SelectIconSvg} from "../UI/assets/svg";
-import {ProductMoveModal} from "./ProductMoveModal";
-import {ProductEditModal} from "./ProductEditModal";
 
 export const WarehouseId = () => {
-	const {currentWarehouse, isMoveProducts, toggleIsMoveProducts, isEditProduct, toggleIsEditProduct} = useWarehousesContext()
+	const {currentWarehouse, isMoveProducts, toggleIsMoveProducts, isEditProduct, toggleIsEditProduct, setCheckProducts} = useWarehousesContext()
 	const [isVisibleAddProductPopup, toggleIsVisibleAddProductPopup] = useToggle(false)
+
+	useEffect(() => {
+		return () => {
+			setCheckProducts([])
+		};
+	}, [])
 
 	return (
 		<div>
