@@ -18,6 +18,7 @@ const warehouseSchema = new Schema({
 		type: Number,
 		required: true
 	},
+	products: []
 })
 
 module.exports = mongoose.model('warehouses', warehouseSchema)

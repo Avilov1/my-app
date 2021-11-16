@@ -1,10 +1,13 @@
 const express = require('express')
+const passport = require("passport");
 const controller = require('../controllers/product')
 const router = express.Router()
 
-router.get('/:warehouseId ', controller.getByWarehouseId)
-router.delete('/:id', controller.remove)
-router.post('/', controller.create)
-router.patch('/:id', controller.update)
+const passportAuth = passport.authenticate('jwt', {session: false})
+
+router.get('/:warehouseId', passportAuth, controller.getByWarehouseId)
+router.delete('/:id', passportAuth, controller.remove)
+router.post('/', passportAuth, controller.create)
+router.patch('/:id', passportAuth, controller.update)
 
 module.exports = router
