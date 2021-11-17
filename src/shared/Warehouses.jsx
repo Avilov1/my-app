@@ -6,7 +6,6 @@ import {TableRowWarehouses} from "../UI/TableRowWarehouses";
 import {useEffect} from "react";
 import {useToggle} from "../services";
 import {WarehouseAddModal} from "./WarehouseAddModal";
-import {data} from "../mock/mock";
 import {useWarehousesContext} from "../context/warehousesContext";
 import {WarehouseEditModal} from "./WarehouseEditModal";
 import {$authHost} from "../services/http";
@@ -21,9 +20,7 @@ export const Warehouses = () => {
 			setWarehouses(data)
 		}
 
-		getAll()
-
-		//!warehouses && setWarehouses($authHost('api/warehouse'))
+		(!warehouses || warehouses.length < 1) && getAll()
 
 		return () => {
 			setCheckWarehouses([])

@@ -5,9 +5,7 @@ export const registration = async (email, password) => {
 		const response = await $host.post('api/auth/register', {email, password})
 		return response
 	} catch (e) {
-		console.log(e.response)
 		return e.response
-
 	}
 }
 
