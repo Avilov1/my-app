@@ -35,7 +35,7 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 		const newFromWarehouse = {...warehouseFrom, products: [...newFromWarehouseProducts]}
 
 		const newWarehouse = warehouses.map(warehouse => {
-			if (warehouse.id === warehouseIn.id) {
+			if (warehouse._id === warehouseIn._id) {
 				const newWarehouse = {...warehouse, products: [...warehouse.products, ...newInWarehouseProducts]}
 				return newWarehouse
 			} else {
@@ -45,7 +45,7 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 
 		setWarehouses(newWarehouse.map(warehouse => {
 
-			if (warehouse.id === warehouseFrom.id) {
+			if (warehouse._id === warehouseFrom.id) {
 				const newWarehouse = {...warehouse, products: [...newFromWarehouseProducts]}
 				return newWarehouse
 			} else {

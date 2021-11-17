@@ -4,14 +4,14 @@ import {CheckboxIconSvg} from "./assets/svg";
 import {useWarehousesContext} from "../context/warehousesContext";
 import {useEffect} from "react";
 
-export const CheckboxWarehouse = ({isActive, setActive, id}) => {
+export const CheckboxWarehouse = ({isActive, setActive, _id}) => {
 
 	const {checkWarehouses} = useWarehousesContext()
 
 	const classNames = classnames(styles.border, {[styles.active]: isActive})
 
 	useEffect(() => {
-		if (checkWarehouses.some(warehouse => warehouse.id === id)) {
+		if (checkWarehouses.some(warehouse => warehouse._id === _id)) {
 			setActive(true)
 		}
 	}, [])

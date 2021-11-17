@@ -3,6 +3,7 @@ import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import {useLocalStorage, useInput, validate, errorMessages} from "../services";
 import styles from "./styles/AuthModal.module.scss"
 import {useAuthContext} from "../context/authContext";
+import {singIn} from "../services/http/userApi";
 
 export const LoginModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
     const [email, onChangeMail] = useInput("")
@@ -21,17 +22,31 @@ export const LoginModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
         setEmailMessageError(errorMessages.emailOrPasswordError)
     }
 
+    const login = async () => {
+        try {
+            await singIn(email, password)
+            setIsAuth(true)
+        } catch (e) {
+            formError()
+        }
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        if (validate.email(email) && validate.password(password) && usersData.length > 0) {
+        if (validate.email(email) && validate.password(password)) {
+            login()
+            /*
             usersData.some(user => {
                 if (user.email === email && user.password === password) {
-                    setIsAuth(true)
+                    //setIsAuth(true)
+
                 } else {
                     formError()
                 }
             })
+
+             */
 
         } else  {
             formError()

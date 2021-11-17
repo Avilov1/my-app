@@ -8,11 +8,11 @@ export const TableRowWarehouses = ({obj}) => {
 	const [isActive, setActive] = useState(false)
 	const history = useHistory()
 	const {pathname} = useLocation()
-	const {title, length, width, height, products, id} = obj
+	const {title, length, width, height, products, _id} = obj
 	const {checkWarehouses, setCheckWarehouses, setCurrentWarehouse} = useWarehousesContext()
 
 	useEffect(() => {
-		if (checkWarehouses.some(prod => prod.id === obj.id)) {
+		if (checkWarehouses.some(prod => prod._id === obj._id)) {
 			setActive(true)
 		} else {
 			setActive(false)
@@ -21,22 +21,22 @@ export const TableRowWarehouses = ({obj}) => {
 
 	useEffect(() => {
 		const removeCheckWarehouse = () => {
-			const filterArr = checkWarehouses && checkWarehouses.filter(warehouse => warehouse.id !== obj.id)
+			const filterArr = checkWarehouses && checkWarehouses.filter(warehouse => warehouse._id !== obj._id)
 			return filterArr
 		}
 		isActive
-			? checkIsDuplicate(obj.id) ? setCheckWarehouses([...checkWarehouses]) : setCheckWarehouses([...checkWarehouses, obj])
+			? checkIsDuplicate(obj._id) ? setCheckWarehouses([...checkWarehouses]) : setCheckWarehouses([...checkWarehouses, obj])
 			: setCheckWarehouses(removeCheckWarehouse())
 	}, [isActive])
 
 	const checkIsDuplicate = (id) => {
-		const result = checkWarehouses.some(item => item.id === id)
+		const result = checkWarehouses.some(item => item._id === id)
 		return result
 	}
 
 	const clickOnWarehouse = () => {
 		setCurrentWarehouse(obj)
-		history.push(`${pathname}/${id}`)
+		history.push(`${pathname}/${_id}`)
 	}
 
 	return (

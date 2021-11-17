@@ -9,13 +9,21 @@ import {WarehouseAddModal} from "./WarehouseAddModal";
 import {data} from "../mock/mock";
 import {useWarehousesContext} from "../context/warehousesContext";
 import {WarehouseEditModal} from "./WarehouseEditModal";
+import {$authHost} from "../services/http";
 
 export const Warehouses = () => {
 	const [isVisibleAddPopup, toggleIsVisibleAddPopup] = useToggle(false)
 	const {warehouses, setWarehouses, isEditWarehouse, setCheckWarehouses} = useWarehousesContext()
 
 	useEffect(() => {
-		!warehouses && setWarehouses(data.warehouses)
+		async function getAll() {
+			const {data} = await $authHost('api/warehouse')
+			setWarehouses(data)
+		}
+
+		getAll()
+
+		//!warehouses && setWarehouses($authHost('api/warehouse'))
 
 		return () => {
 			setCheckWarehouses([])
@@ -55,7 +63,7 @@ export const Warehouses = () => {
 					{
 						warehouses && warehouses.map(warehouse =>
 							<TableRowWarehouses
-								key={warehouse.id}
+								key={warehouse._id}
 								obj={warehouse}
 							/>
 						)

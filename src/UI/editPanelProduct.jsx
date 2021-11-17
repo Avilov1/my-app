@@ -16,7 +16,7 @@ export const EditPanelProduct = ({isMove = false}) => {
 		const filterCheckProducts = checkProducts.filter(item => !productCurrentWarehouse.includes(item))
 
 		const newState = warehouses.map(warehouse => {
-			if (warehouse.id === currentWarehouse.id) {
+			if (warehouse._id === currentWarehouse._id) {
 				const editWarehouse = {...warehouse, products: [...filterProducts]}
 				return editWarehouse
 			} else {

@@ -18,7 +18,7 @@ export const WarehouseEditModal = () => {
 
 	const editWarehouse = () => {
 		const newState = warehouses.map(warehouse => {
-			if (warehouse.id === checkWarehouses[0].id) {
+			if (warehouse._id === checkWarehouses[0]._id) {
 				return {
 					...warehouse, title, length, width, height
 				}
@@ -28,7 +28,7 @@ export const WarehouseEditModal = () => {
 		})
 
 		const newCheckState = checkWarehouses.map(warehouse => {
-			if (warehouse.id === checkWarehouses[0].id) {
+			if (warehouse._id === checkWarehouses[0]._id) {
 				return {
 					...warehouse, title, length, width, height
 				}

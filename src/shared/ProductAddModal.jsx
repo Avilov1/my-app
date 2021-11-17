@@ -34,7 +34,7 @@ export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 		const newProduct = {id, itemNumber, manufacturer, productName, purchasingTechnology, shipmentMethod}
 
 		const newState = warehouses.map(warehouse => {
-			if (warehouse.id === currentWarehouse.id) {
+			if (warehouse._id === currentWarehouse._id) {
 				const addedProductWarehouse = {...warehouse, products: [...warehouse.products, newProduct]}
 				setCurrentWarehouse(addedProductWarehouse)
 				return addedProductWarehouse

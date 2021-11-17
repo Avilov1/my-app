@@ -15,13 +15,13 @@ export const ModalSelect = ({type, label, setValue, value}) => {
 				<select
 					onChange={(e) =>
 						setValue(
-							warehouses.find(warehouse => (warehouse.id == e.target.value))
+							warehouses.find(warehouse => (warehouse._id == e.target.value))
 						)
 					}
 				>
 					<option disabled selected>Select a warehouse</option>
-					{warehouses.filter(item => item.id !== currentWarehouse.id).map((warehouse) => (
-						<option key={warehouse.id} value={warehouse.id}>
+					{warehouses.filter(item => item._id !== currentWarehouse._id).map((warehouse) => (
+						<option key={warehouse._id} value={warehouse._id}>
 							{warehouse.title}
 						</option>
 					))}

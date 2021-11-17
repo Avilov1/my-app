@@ -39,7 +39,7 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 		})
 
 		const newState = warehouses.map(warehouse => {
-			if (warehouse.id === currentWarehouse.id) {
+			if (warehouse._id === currentWarehouse._id) {
 				const addedProductWarehouse = {...warehouse, products: [...newProducts]}
 				return addedProductWarehouse
 			} else {

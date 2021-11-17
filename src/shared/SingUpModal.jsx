@@ -3,6 +3,7 @@ import {ModalContainer, ModalInput, ModalButton} from "../UI";
 import {useInput, useLocalStorage, validate, errorMessages} from "../services";
 import styles from "./styles/AuthModal.module.scss"
 import {useAuthContext} from "../context/authContext";
+import {registration} from "../services/http/userApi";
 
 export const SingUpModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
 	const [email, onChangeMail] = useInput("")
@@ -17,13 +18,26 @@ export const SingUpModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
 	const {setIsAuth} = useAuthContext()
 
 	useEffect(() => {
-		if ((!isEmailError && !isPasswordError) && email) {
-			const newUser = {"email": email, "password": password}
-			setUsers([...users, newUser])
-			setIsRegistered(true)
-		}
-		isRegistered && setIsAuth(true)
+		singUp()
 	}, [isPasswordError, isEmailError, isRegistered])
+
+	const singUp = async () => {
+		if ((!isEmailError && !isPasswordError) && email) {
+			const response = await registration(email, password)
+			switch (response.status) {
+				case 201:
+
+					setIsAuth(true)
+					break
+				case 409:
+					setIsEmailError(true)
+					setEmailMessageError(response.data.message)
+					break
+				default:
+					break
+			}
+		}
+	}
 
 	const handleSubmit = (event) => {
 		event.preventDefault()
