@@ -2,8 +2,9 @@ import {useWarehousesContext} from "../context/warehousesContext";
 
 import {MoveSvg, SelectSvg} from "./assets/svg";
 import styles from "./styles/EditPanel.module.scss"
-import {warehouseRemove} from "../services/http/warehouseApi";
+
 import {$authHost} from "../services/http";
+import {warehouseApi} from "../services/http/warehouseApi";
 
 export const EditPanelWarehouses = ({isMove = false}) => {
 	const {checkWarehouses, warehouses, setWarehouses, setCheckWarehouses, setIsEditWarehouse} = useWarehousesContext()
@@ -12,15 +13,11 @@ export const EditPanelWarehouses = ({isMove = false}) => {
 		const removeWarehouses = warehouses.filter(item => checkWarehouses.includes(item))
 		const filterWarehouses = checkWarehouses.filter(item => !removeWarehouses.includes(item))
 		await removeWarehouses.forEach(warehouse => {
-			warehouseRemove(warehouse._id)
+			warehouseApi.remove(warehouse._id)
 		})
 		const {data} = await $authHost('api/warehouse')
 		setWarehouses(data)
 		setCheckWarehouses(filterWarehouses)
-
-		//const filterCheckWarehouses = checkWarehouses.filter(item => !warehouses.includes(item))
-		//setWarehouses(filterWarehouses)
-
 	}
 
 	const countCheck = checkWarehouses ? checkWarehouses.length : 0

@@ -1,4 +1,4 @@
-import {$authHost, $host} from "./index";
+import {$host} from "./index";
 
 export const registration = async (email, password) => {
 	try {
@@ -12,11 +12,5 @@ export const registration = async (email, password) => {
 export const singIn = async (email, password) => {
 	const {data} = await $host.post('api/auth/login', {email, password})
 	localStorage.setItem("token", data.token)
-	return data
-}
-
-export const check = async () => {
-	const {data} = await $authHost.get('api/auth/login')
-	localStorage.setItem("token", data)
 	return data
 }

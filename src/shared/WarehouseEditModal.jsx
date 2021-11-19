@@ -3,6 +3,7 @@ import {useWarehousesContext} from "../context/warehousesContext";
 import {useInput, errorMessages} from "../services";
 import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import styles from "./styles/AuthModal.module.scss"
+import {warehouseApi} from "../services/http/warehouseApi";
 
 export const WarehouseEditModal = () => {
 	const {warehouses, setWarehouses, isEditWarehouse, setIsEditWarehouse, checkWarehouses, setCheckWarehouses} = useWarehousesContext()
@@ -16,7 +17,8 @@ export const WarehouseEditModal = () => {
 	const [isHeightError, setIsHeightError] = useState(null)
 	const [messageError, setMessageError] = useState(null)
 
-	const editWarehouse = () => {
+	const editWarehouse = async () => {
+		/*
 		const newState = warehouses.map(warehouse => {
 			if (warehouse._id === checkWarehouses[0]._id) {
 				return {
@@ -36,10 +38,32 @@ export const WarehouseEditModal = () => {
 				return warehouse
 			}
 		})
+		*/
+		console.log(warehouses)
+		try {
+			await warehouseApi.update({...checkWarehouses[0], title, length, width, height})
 
-		setWarehouses(newState)
-		setCheckWarehouses([])
-		setIsEditWarehouse(false)
+			const newState = warehouses.map(warehouse => {
+				if (warehouse._id === checkWarehouses[0]._id) {
+					return {
+						...warehouse, title, length, width, height
+					}
+				} else {
+					return warehouse
+				}
+			})
+
+			setCheckWarehouses([])
+			setWarehouses(newState)
+
+
+		} catch (e) {
+			alert(e)
+		}
+
+
+		//const {data} = await warehouseApi.getAll()
+
 	}
 
 	const checkForm = (value, error, message) => {
