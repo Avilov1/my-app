@@ -13,9 +13,17 @@ import {
 	TruckMethodSvg,
 	VisaSvg
 } from "../UI/assets/svg";
+import {warehouseApi} from "../services/http/warehouseApi";
 
 export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
-	const {warehouses, setWarehouses, currentWarehouse, setCurrentWarehouse, checkProducts, setCheckProducts} = useWarehousesContext()
+	const {
+		setWarehouses,
+		currentWarehouse,
+		setCurrentWarehouse,
+		checkProducts,
+		setCheckProducts
+	} = useWarehousesContext()
+
 	const [step, setStep] = useState(1)
 	const [productName, onChangeProductName] = useInput(checkProducts[0].productName)
 	const [manufacturer, onChangeManufacturer] = useInput(checkProducts[0].manufacturer)
@@ -28,30 +36,36 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 	const [shipmentMethod, setShipmentMethod] = useState(checkProducts[0].shipmentMethod)
 	const [paymentMethod, setPaymentMethod] = useState("visa")
 
-	const editProduct = () => {
-		const newProducts = currentWarehouse.products.map(product => {
+	const editProduct = async () => {
+		const updatedProducts = currentWarehouse.products.map(product => {
 			if (product.id === checkProducts[0].id) {
-				const newProduct = {...product, itemNumber, manufacturer, productName, purchasingTechnology, shipmentMethod}
-				return newProduct
+				return {
+					...product,
+					itemNumber,
+					manufacturer,
+					productName,
+					purchasingTechnology,
+					shipmentMethod
+				}
 			} else {
 				return product
 			}
 		})
 
-		const newState = warehouses.map(warehouse => {
-			if (warehouse._id === currentWarehouse._id) {
-				const addedProductWarehouse = {...warehouse, products: [...newProducts]}
-				return addedProductWarehouse
-			} else {
-				return warehouse
-			}
-		})
+		try {
+			const updatedWarehouse = await warehouseApi.update({
+				...currentWarehouse,
+				products: [...updatedProducts]
+			})
+			const newState = await warehouseApi.getAll()
+			setWarehouses(newState.data)
+			setCurrentWarehouse(updatedWarehouse.data)
+			toggleIsVisible()
+			setCheckProducts([])
 
-		setWarehouses(newState)
-		setCheckProducts([])
-		setCurrentWarehouse({...currentWarehouse, products: [...newProducts]})
-
-		toggleIsVisible()
+		} catch (e) {
+			alert(e)
+		}
 	}
 
 	const checkForm = (value, error, message) => {

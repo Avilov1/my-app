@@ -1,8 +1,9 @@
 import {useState} from "react";
-import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import {useWarehousesContext} from "../context/warehousesContext";
+import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import {ModalCheckRow} from "../UI/modalCheckRow";
 import {ModalSelect} from "../UI/ModalSelect";
+import {warehouseApi} from "../services/http/warehouseApi";
 import styles from "./styles/AuthModal.module.scss"
 import {
 	AirMethodSvg,
@@ -14,47 +15,43 @@ import {
 	VisaSvg
 } from "../UI/assets/svg";
 
+
 export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 	const {
-		warehouses,
 		setWarehouses,
 		currentWarehouse,
 		checkProducts,
 		setCurrentWarehouse,
 		setCheckProducts
 	} = useWarehousesContext()
+
 	const [step, setStep] = useState(1)
 	const [warehouseFrom] = useState(currentWarehouse)
 	const [warehouseIn, setWarehouseIn] = useState("")
 	const [shipmentMethod, setShipmentMethod] = useState("air")
 	const [paymentMethod, setPaymentMethod] = useState("visa")
 
-	const moveProduct = () => {
-		const newFromWarehouseProducts = warehouseFrom.products.filter(prod => !checkProducts.includes(prod))
-		const newInWarehouseProducts = warehouseFrom.products.filter(prod => checkProducts.includes(prod))
-		const newFromWarehouse = {...warehouseFrom, products: [...newFromWarehouseProducts]}
+	const moveProduct = async () => {
+		const updateFromProducts = warehouseFrom.products.filter(prod => !checkProducts.includes(prod))
 
-		const newWarehouse = warehouses.map(warehouse => {
-			if (warehouse._id === warehouseIn._id) {
-				const newWarehouse = {...warehouse, products: [...warehouse.products, ...newInWarehouseProducts]}
-				return newWarehouse
-			} else {
-				return warehouse
-			}
-		})
+		const updateInProducts = [...warehouseIn.products,
+			...warehouseFrom.products.filter(prod => checkProducts.includes(prod))]
 
-		setWarehouses(newWarehouse.map(warehouse => {
+		try {
+			const updateFromWarehouse = await warehouseApi.update({
+				...warehouseFrom, products: [...updateFromProducts]
+			})
 
-			if (warehouse._id === warehouseFrom.id) {
-				const newWarehouse = {...warehouse, products: [...newFromWarehouseProducts]}
-				return newWarehouse
-			} else {
-				return warehouse
-			}
-		}))
-		setCurrentWarehouse(newFromWarehouse)
-		setCheckProducts([])
-		toggleIsVisible()
+			await warehouseApi.update({...warehouseIn, products: [...updateInProducts]})
+			const {data} = await warehouseApi.getAll()
+			setCurrentWarehouse(updateFromWarehouse.data)
+			setWarehouses(data)
+			setCheckProducts([])
+			toggleIsVisible()
+
+		} catch (e) {
+			alert(e)
+		}
 	}
 
 	const handleSubmit = (event) => {

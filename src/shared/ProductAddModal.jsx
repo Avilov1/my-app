@@ -13,9 +13,9 @@ import {
 	TruckMethodSvg,
 	VisaSvg
 } from "../UI/assets/svg";
+import {warehouseApi} from "../services/http/warehouseApi";
 
 export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
-	// steps
 	const [step, setStep] = useState(1)
 	const [productName, onChangeProductName] = useInput("")
 	const [manufacturer, onChangeManufacturer] = useInput("")
@@ -27,24 +27,24 @@ export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 	const [purchasingTechnology, setPurchasingTechnology] = useState("A")
 	const [shipmentMethod, setShipmentMethod] = useState("air")
 	const [paymentMethod, setPaymentMethod] = useState("visa")
-	const {warehouses, setWarehouses, currentWarehouse, setCurrentWarehouse} = useWarehousesContext()
+	const {setWarehouses, currentWarehouse, setCurrentWarehouse} = useWarehousesContext()
 
-	const addProduct = () => {
+	const addProduct = async () => {
 		const id = Date.now()
-		const newProduct = {id, itemNumber, manufacturer, productName, purchasingTechnology, shipmentMethod}
+		const newProduct = {id, productName, manufacturer, itemNumber, purchasingTechnology, shipmentMethod}
 
-		const newState = warehouses.map(warehouse => {
-			if (warehouse._id === currentWarehouse._id) {
-				const addedProductWarehouse = {...warehouse, products: [...warehouse.products, newProduct]}
-				setCurrentWarehouse(addedProductWarehouse)
-				return addedProductWarehouse
-			} else {
-				return warehouse
-			}
-		})
+		try {
+			const updatedWarehouse = await warehouseApi.update(
+				{...currentWarehouse, products: [...currentWarehouse.products, newProduct]}
+			)
+			const newState = await warehouseApi.getAll()
+			setCurrentWarehouse(updatedWarehouse.data)
+			setWarehouses(newState.data)
+			toggleIsVisible()
 
-		setWarehouses(newState)
-		toggleIsVisible()
+		} catch (e) {
+			alert(e)
+		}
 	}
 
 	const checkForm = (value, error, message) => {
