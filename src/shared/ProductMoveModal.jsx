@@ -14,6 +14,7 @@ import {
 	TruckMethodSvg,
 	VisaSvg
 } from "../UI/assets/svg";
+import {ModalSelectCustom} from "../UI/ModalSelectCustom";
 
 
 export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
@@ -71,8 +72,14 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 					<div className={styles.modalInputs}>
 						<ModalInput label={"Product name"}
 						            value={warehouseFrom.title}
-						            type={"text"}/>
-						<ModalSelect value={warehouseIn} setValue={setWarehouseIn}/>
+						            type={"text"}
+						            disabled/>
+						<ModalSelectCustom value={warehouseIn} setValue={setWarehouseIn}/>
+
+						{
+
+						}
+
 
 					</div>
 					<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(2)}/>
