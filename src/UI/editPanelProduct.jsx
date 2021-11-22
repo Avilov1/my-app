@@ -1,33 +1,32 @@
 import {useWarehousesContext} from "../context/warehousesContext";
-
-import {MoveSvg, SelectSvg} from "./assets/svg";
+import {warehouseApi} from "../services/http/warehouseApi";
 import styles from "./styles/EditPanel.module.scss"
+import {MoveSvg, SelectSvg} from "./assets/svg";
 
 export const EditPanelProduct = ({isMove = false}) => {
 	const {
-		warehouses, setWarehouses, checkWarehouses, setCheckWarehouses, setIsEditWarehouse,
-		checkProducts, setCheckProducts, toggleIsEditProduct, currentWarehouse, setCurrentWarehouse,
+		setWarehouses,
+		checkProducts,
+		setCheckProducts,
+		toggleIsEditProduct,
+		currentWarehouse,
+		setCurrentWarehouse,
 		toggleIsMoveProducts
 	} = useWarehousesContext()
 
-	const deleteProducts = () => {
-		const productCurrentWarehouse = currentWarehouse.products
-		const filterProducts = productCurrentWarehouse.filter(item => !checkProducts.includes(item))
-		const filterCheckProducts = checkProducts.filter(item => !productCurrentWarehouse.includes(item))
+	const deleteProducts = async () => {
+		try {
+			const productCurrentWarehouse = currentWarehouse.products
+			const filterProducts = productCurrentWarehouse.filter(item => !checkProducts.includes(item))
+			const updatedWarehouse = await warehouseApi.update({...currentWarehouse, products: [...filterProducts]})
+			const newState = await warehouseApi.getAll()
+			setCurrentWarehouse(updatedWarehouse.data)
+			setCheckProducts([])
+			setWarehouses(newState.data)
 
-		const newState = warehouses.map(warehouse => {
-			if (warehouse._id === currentWarehouse._id) {
-				const editWarehouse = {...warehouse, products: [...filterProducts]}
-				return editWarehouse
-			} else {
-				return warehouse
-			}
-		})
-
-		setCurrentWarehouse({...currentWarehouse, products: [...filterProducts]})
-		setCheckProducts(filterCheckProducts)
-
-		setWarehouses(newState)
+		} catch (e) {
+			alert(e)
+		}
 	}
 
 	const countCheck = checkProducts ? checkProducts.length : 0

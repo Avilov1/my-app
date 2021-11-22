@@ -8,7 +8,7 @@ import {useToggle} from "../services";
 import {WarehouseAddModal} from "./WarehouseAddModal";
 import {useWarehousesContext} from "../context/warehousesContext";
 import {WarehouseEditModal} from "./WarehouseEditModal";
-import {$authHost} from "../services/http";
+import {warehouseApi} from "../services/http/warehouseApi";
 
 export const Warehouses = () => {
 	const [isVisibleAddPopup, toggleIsVisibleAddPopup] = useToggle(false)
@@ -16,7 +16,7 @@ export const Warehouses = () => {
 
 	useEffect(() => {
 		async function getAll() {
-			const {data} = await $authHost('api/warehouse')
+			const {data} = await warehouseApi.getAll()
 			setWarehouses(data)
 		}
 
@@ -25,7 +25,6 @@ export const Warehouses = () => {
 		return () => {
 			setCheckWarehouses([])
 		};
-
 	}, [])
 
 	return (

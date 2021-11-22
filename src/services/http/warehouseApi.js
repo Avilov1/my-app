@@ -26,5 +26,14 @@ export const warehouseApi = {
 		} catch (e) {
 			return e.response
 		}
-	}
+	},
+
+	async add(obj) {
+		try {
+			const response = await $authHost.post(`api/warehouse`, obj)
+			return response
+		} catch (e) {
+			return e.response
+		}
+	},
 }

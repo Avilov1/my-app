@@ -39,31 +39,26 @@ export const WarehouseEditModal = () => {
 			}
 		})
 		*/
-		console.log(warehouses)
 		try {
-			await warehouseApi.update({...checkWarehouses[0], title, length, width, height})
+			const {data} =  await warehouseApi.update({...checkWarehouses[0], title, length, width, height})
 
 			const newState = warehouses.map(warehouse => {
 				if (warehouse._id === checkWarehouses[0]._id) {
 					return {
-						...warehouse, title, length, width, height
+						...data
 					}
 				} else {
 					return warehouse
 				}
 			})
 
+			setIsEditWarehouse(false)
 			setCheckWarehouses([])
 			setWarehouses(newState)
-
 
 		} catch (e) {
 			alert(e)
 		}
-
-
-		//const {data} = await warehouseApi.getAll()
-
 	}
 
 	const checkForm = (value, error, message) => {

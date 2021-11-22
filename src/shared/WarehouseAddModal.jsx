@@ -1,9 +1,9 @@
-import {useEffect, useState} from "react";
-import axios from "axios";
-import {ModalContainer, ModalButton, ModalInput} from "../UI";
-import {useInput, errorMessages, useLocalStorage} from "../services";
-import styles from "./styles/AuthModal.module.scss"
+import {useState} from "react";
 import {useWarehousesContext} from "../context/warehousesContext";
+import {ModalContainer, ModalButton, ModalInput} from "../UI";
+import {useInput, errorMessages} from "../services";
+import {warehouseApi} from "../services/http/warehouseApi";
+import styles from "./styles/AuthModal.module.scss"
 
 export const WarehouseAddModal = ({isVisible, toggleIsVisible}) => {
 	const [title, onChangeTitle] = useInput("")
@@ -15,15 +15,21 @@ export const WarehouseAddModal = ({isVisible, toggleIsVisible}) => {
 	const [isWidthError, setIsWidthError] = useState(null)
 	const [isHeightError, setIsHeightError] = useState(null)
 	const [messageError, setMessageError] = useState(null)
-	const {warehouses, setWarehouses} = useWarehousesContext()
+	const {setWarehouses} = useWarehousesContext()
 
-	const addWarehouse = () => {
-		const id = Date.now()
+	const addWarehouse = async () => {
 		const products = []
-		const newWarehouse = {id, title, length, width, height, products}
-		const newState = [...warehouses, newWarehouse]
-		setWarehouses(newState)
-		toggleIsVisible()
+		const newWarehouse = {title, length, width, height, products}
+
+		try {
+			await warehouseApi.add(newWarehouse)
+			const {data} = await warehouseApi.getAll()
+			setWarehouses(data)
+			toggleIsVisible()
+
+		} catch (e) {
+			alert(e)
+		}
 	}
 
 	const checkForm = (value, error, message) => {
