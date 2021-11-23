@@ -54,7 +54,8 @@ export const Warehouses = () => {
 					             col2={"Number of products"}
 					             col3={"Length, m"}
 					             col4={"Width, m"}
-					             col5={"Height, m"}/>
+					             col5={"Height, m"}
+					             parentComponent={"warehouses"}/>
 					<tbody>
 					{
 						warehouses && warehouses.map(warehouse =>

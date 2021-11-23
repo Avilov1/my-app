@@ -1,13 +1,13 @@
-import {CheckboxWarehouse} from "./CheckboxWarehouse";
 import styles from "./styles/TableHeader.module.scss"
+import {CheckboxHeaderTable} from "./CheckboxHeaderTable";
 
-export const TableHeader = ({col1, col2, col3, col4, col5}) => {
+export const TableHeader = ({col1, col2, col3, col4, col5, parentComponent}) => {
 	return (
 		<thead>
 		<tr className={styles.tr} width={200}>
 			<th className={styles.th} width={200}>
 				<div>
-					<CheckboxWarehouse/>
+					<CheckboxHeaderTable parentComponent={parentComponent}/>
 					<span>{col1}</span>
 				</div>
 			</th>

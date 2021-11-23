@@ -73,7 +73,8 @@ export const WarehouseId = () => {
 					             col2={"Manufacturer"}
 					             col3={"Item number"}
 					             col4={"Purchasing technology"}
-					             col5={"Shipment method"}/>
+					             col5={"Shipment method"}
+					             parentComponent={"products"}/>
 					<tbody>
 					{
 						currentWarehouse.products.map(product =>
