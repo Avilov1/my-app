@@ -21,16 +21,36 @@
     justify-content: space-between;
     padding-right: 22px;
     color: $darkGray;
+    transition: all 100ms ease;
 
+    svg {
+      transition: all 200ms ease-out;
+    }
+  }
+  .active {
+
+    border: 1px solid $orange;
+
+    svg {
+      transform: rotateX(180deg);
+      transition: transform 100ms ease-in;
+
+      path {
+        stroke: $orange;
+      }
+    }
   }
 
   .items {
     position: absolute;
     margin-top: 70px;
+    max-width: 300px;
     max-height: 153px;
     background: $white;
     border: 1px solid #E6E8EA;
     border-radius: 3px;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     .item {
       padding-left: 18px;
@@ -43,7 +63,6 @@
       justify-content: space-between;
       border-color: transparent;
 
-
       &:hover {
         transition: 200ms;
         background-color: #F7F9FC;
@@ -54,8 +73,4 @@
       }
     }
   }
-}
-
-.active {
-  color: red;
 }

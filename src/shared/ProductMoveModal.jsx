@@ -2,7 +2,6 @@ import {useState} from "react";
 import {useWarehousesContext} from "../context/warehousesContext";
 import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import {ModalCheckRow} from "../UI/modalCheckRow";
-import {ModalSelect} from "../UI/ModalSelect";
 import {warehouseApi} from "../services/http/warehouseApi";
 import styles from "./styles/AuthModal.module.scss"
 import {
@@ -15,7 +14,6 @@ import {
 	VisaSvg
 } from "../UI/assets/svg";
 import {ModalSelectCustom} from "../UI/ModalSelectCustom";
-
 
 export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 	const {
@@ -75,11 +73,6 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 						            type={"text"}
 						            disabled/>
 						<ModalSelectCustom value={warehouseIn} setValue={setWarehouseIn}/>
-
-						{
-
-						}
-
 
 					</div>
 					<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(2)}/>

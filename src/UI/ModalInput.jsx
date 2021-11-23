@@ -8,8 +8,9 @@ export const ModalInput = ({
 	                           value,
 	                           onChange,
 	                           isError = false,
-	                           messageError
-                           }, disabled = false) => {
+	                           messageError,
+	                           disabled = false
+                           }) => {
 	const inputClass = classnames({[styles.error]: isError})
 
 	return (
@@ -29,11 +30,12 @@ export const ModalInput = ({
 			</div>
 			<div>
 				<input
-					disabled={false}
+					disabled={disabled}
 					className={inputClass}
 					type={type} placeholder={placeholder}
 					value={value}
 					onChange={onChange}/>
+
 			</div>
 		</div>
 	)
