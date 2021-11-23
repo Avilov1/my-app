@@ -2,6 +2,7 @@ import {useState} from "react";
 import {useWarehousesContext} from "../context/warehousesContext";
 import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import {ModalCheckRow} from "../UI/modalCheckRow";
+import {ModalSelectCustom} from "../UI/ModalSelectCustom";
 import {warehouseApi} from "../services/http/warehouseApi";
 import styles from "./styles/AuthModal.module.scss"
 import {
@@ -13,7 +14,6 @@ import {
 	TruckMethodSvg,
 	VisaSvg
 } from "../UI/assets/svg";
-import {ModalSelectCustom} from "../UI/ModalSelectCustom";
 
 export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 	const {
@@ -94,7 +94,7 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 						</div>
 						<div onClick={() => (setShipmentMethod("sea"))}>
 							<ModalCheckRow isActive={shipmentMethod === "sea"}>
-								<SeaMethodSvg width={24} height={24}/>
+									<SeaMethodSvg width={24} height={24}/>
 								By sea
 							</ModalCheckRow>
 						</div>

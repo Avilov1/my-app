@@ -1,8 +1,8 @@
+import {useEffect} from "react";
 import classnames from "classnames";
+import {useWarehousesContext} from "../context/warehousesContext";
 import styles from "./styles/Checkbox.module.scss"
 import {CheckboxIconSvg} from "./assets/svg";
-import {useWarehousesContext} from "../context/warehousesContext";
-import {useEffect, useState} from "react";
 
 export const CheckboxProduct = ({isActive, setActive, id}) => {
 	const {checkProducts, setCheckbox} = useWarehousesContext()

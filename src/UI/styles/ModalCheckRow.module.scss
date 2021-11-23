@@ -8,6 +8,12 @@
   width: 300px;
   height: 60px;
   background-color: #F8F9F9;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  color: #b2b7bd;
+  cursor: pointer;
 
   .leftSide {
     display: flex;
@@ -16,15 +22,10 @@
     gap: 8px;
     font-size: 14px;
     line-height: 14px;
-    color: rgba(62, 76, 89, 0.4);
-
-
-
 
     svg {
       path {
-        stroke: currentColor;
-        fill: transparent;
+        fill: currentColor;
       }
     }
 
@@ -34,6 +35,11 @@
 .active {
   color: $orange;
   background-color: #FEF5E7;
+
+  span {
+    color: $orange;
+    background-color: #FEF5E7;
+  }
 }
 
 
