@@ -1,5 +1,4 @@
 const Warehouse = require('../models/Warehouse')
-const Product = require('../models/Product')
 const errorHandler = require('../utils/errorHandler')
 
 module.exports.getAll = async function (req, res) {
@@ -25,7 +24,6 @@ module.exports.getById = async function (req, res) {
 module.exports.remove = async function (req, res) {
 	try {
 		await Warehouse.remove({_id: req.params.id})
-		await Product.remove({warehouse: req.params.id})
 		res.status(200).json({
 			message: "Warehouse deleted."
 		})
