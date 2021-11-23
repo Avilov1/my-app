@@ -1,5 +1,43 @@
 @import "src/index";
 
 .wrapper {
+  position: relative;
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 56px;
 
+  .lineContain {
+    width: 39px;
+
+    .line {
+      position: absolute;
+      width: 39px;
+      border-top: 1px solid #E6E8EA;
+      top: 14px;
+
+    }
+  }
+
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #E6E8EA;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #3e4c59;
+    opacity: 0.4;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 0 8px;
+  }
+  .active {
+    color: $white;
+    background-color: $orange;
+    opacity: 1;
+  }
 }
+

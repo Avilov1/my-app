@@ -19,6 +19,7 @@ export const ModalSelectCustom = ({setValue, value}) => {
 
 	return (
 		<div className={styles.select}>
+			<span className={styles.label}>In</span>
 			<div className={headerClass} onClick={() => toggleIsVisible()}>
 				{value
 					? value.title

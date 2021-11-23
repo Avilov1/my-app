@@ -3,10 +3,16 @@
 .select {
   display: flex;
   flex-direction: column;
-
+  cursor: pointer;
+  align-items: flex-start;
   position: relative;
 
-  cursor: pointer;
+  .label {
+    padding-bottom: 8px;
+    font-size: 12px;
+    line-height: 12px;
+    color: $darkGray;
+  }
 
   .selectTitle {
     color: rgba(62, 76, 89, 0.4);
@@ -46,7 +52,7 @@
 
   .items {
     position: absolute;
-    margin-top: 58px;
+    margin-top: 78px;
     max-width: 300px;
     max-height: 153px;
     background: $white;

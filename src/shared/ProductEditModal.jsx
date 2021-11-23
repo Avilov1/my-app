@@ -14,6 +14,7 @@ import {
 	VisaSvg
 } from "../UI/assets/svg";
 import {warehouseApi} from "../services/http/warehouseApi";
+import {StepIndicator} from "../UI/StepIndicator";
 
 export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 	const {
@@ -99,8 +100,10 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 				<ModalContainer isVisible={isVisible}
 				                toggleIsVisible={toggleIsVisible}
 				                title={"Edit a product"}
-				                submit={handleSubmit}
-				>
+				                submit={handleSubmit}>
+
+					<StepIndicator step={step}/>
+
 					<div className={styles.modalInputs}>
 						<ModalInput label={"Product name"}
 						            value={productName}
@@ -195,8 +198,10 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 				{step === 2 &&
 				<ModalContainer isVisible={isVisible}
 				                toggleIsVisible={toggleIsVisible}
-				                title={"Shipping method"}
-				>
+				                title={"Shipping method"}>
+
+					<StepIndicator step={step}/>
+
 					<div className={styles.modalInputs}>
 						<div onClick={() => (setShipmentMethod("AIR"))}>
 							<ModalCheckRow isActive={shipmentMethod === "AIR"}>
@@ -226,8 +231,10 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 				{step === 3 &&
 				<ModalContainer isVisible={isVisible}
 				                toggleIsVisible={toggleIsVisible}
-				                title={"Payment method"}
-				>
+				                title={"Payment method"}>
+
+					<StepIndicator step={step}/>
+
 					<div className={styles.modalInputs}>
 						<div onClick={() => (setPaymentMethod("visa"))}>
 							<ModalCheckRow isActive={paymentMethod === "visa"}>
