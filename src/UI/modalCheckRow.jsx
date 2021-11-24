@@ -1,6 +1,7 @@
+import classnames from "classnames";
 import styles from "./styles/ModalCheckRow.module.scss"
 import {CheckCircleSvg} from "./assets/svg";
-import classnames from "classnames";
+
 
 export const ModalCheckRow = ({children, isActive}) => {
 

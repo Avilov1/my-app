@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
+import {useAuthContext} from "../context/authContext";
 import {ModalContainer, ModalInput, ModalButton} from "../UI";
 import {useInput, useLocalStorage, validate, errorMessages} from "../services";
-import styles from "./styles/AuthModal.module.scss"
-import {useAuthContext} from "../context/authContext";
 import {registration} from "../services/http/userApi";
+import styles from "./styles/AuthModal.module.scss"
 
 export const SingUpModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
 	const [email, onChangeMail] = useInput("")
@@ -13,13 +13,12 @@ export const SingUpModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
 	const [isPasswordError, setIsPasswordError] = useState(null)
 	const [emailMessageError, setEmailMessageError] = useState(null)
 	const [passwordMessageError, setPasswordMessageError] = useState(null)
-	const [isRegistered, setIsRegistered] = useState(false)
 	const [users, setUsers] = useLocalStorage([], "usersData")
 	const {setIsAuth} = useAuthContext()
 
 	useEffect(() => {
 		singUp()
-	}, [isPasswordError, isEmailError, isRegistered])
+	}, [isPasswordError, isEmailError])
 
 	const singUp = async () => {
 		if ((!isEmailError && !isPasswordError) && email) {
@@ -65,23 +64,47 @@ export const SingUpModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
 	}
 
 	return (
-		<ModalContainer isVisible={isVisible} toggleIsVisible={toggleIsVisible} title={"Sing Up"} onSubmit={handleSubmit}>
+		<ModalContainer isVisible={isVisible}
+		                toggleIsVisible={toggleIsVisible}
+		                title={"Sing Up"}
+		                onSubmit={handleSubmit}>
+
 			<div className={styles.modalInputs}>
-				<ModalInput label={"Email"} value={email} onChange={onChangeMail} placeholder={"Enter email"}
+
+				<ModalInput label={"Email"}
+				            value={email}
+				            onChange={onChangeMail}
+				            placeholder={"Enter email"}
 				            isError={isEmailError}
-				            messageError={emailMessageError} type={"email"}/>
-				<ModalInput label={"Password"} value={password} onChange={onChangePassword} placeholder={"Enter password"}
-				            isError={isPasswordError} messageError={passwordMessageError} type={"password"}/>
-				<ModalInput label={"Password confirm"} value={passwordConfirm} onChange={onChangePasswordConfirm}
+				            messageError={emailMessageError}
+				            type={"email"}/>
+
+				<ModalInput label={"Password"}
+				            value={password}
+				            onChange={onChangePassword}
+				            placeholder={"Enter password"}
+				            isError={isPasswordError}
+				            messageError={passwordMessageError}
+				            type={"password"}/>
+
+				<ModalInput label={"Password confirm"}
+				            value={passwordConfirm}
+				            onChange={onChangePasswordConfirm}
 				            placeholder={"Password confirm"}
-				            isError={isPasswordError} messageError={passwordMessageError} type={"password"}/>
+				            isError={isPasswordError}
+				            messageError={passwordMessageError}
+				            type={"password"}/>
 			</div>
 
 			<ModalButton disabled text={"Log in"} type={"submit"}/>
 
 			<div className={styles.question}>
-				Already have an account? <span onClick={replaceAuthModal}>Log in</span>
+				Already have an account?
+				<span onClick={replaceAuthModal}>
+					Log in
+				</span>
 			</div>
+
 		</ModalContainer>
 	)
 }

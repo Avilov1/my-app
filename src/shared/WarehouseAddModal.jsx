@@ -93,6 +93,7 @@ export const WarehouseAddModal = ({isVisible, toggleIsVisible}) => {
 				            messageError={messageError}
 				            type={"text"}/>
 			</div>
+
 			<ModalButton text={"Add a warehouse"} type={"submit"}/>
 		</ModalContainer>
 	)

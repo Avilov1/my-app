@@ -4,8 +4,8 @@ import {CheckboxHeaderTable} from "./CheckboxHeaderTable";
 export const TableHeader = ({col1, col2, col3, col4, col5, parentComponent}) => {
 	return (
 		<thead>
-		<tr className={styles.tr} width={200}>
-			<th className={styles.th} width={200}>
+		<tr className={styles.tr}>
+			<th className={styles.th}>
 				<div>
 					<CheckboxHeaderTable parentComponent={parentComponent}/>
 					<span>{col1}</span>

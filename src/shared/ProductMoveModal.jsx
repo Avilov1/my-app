@@ -98,7 +98,7 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 						</div>
 						<div onClick={() => (setShipmentMethod("sea"))}>
 							<ModalCheckRow isActive={shipmentMethod === "sea"}>
-									<SeaMethodSvg width={24} height={24}/>
+								<SeaMethodSvg width={24} height={24}/>
 								By sea
 							</ModalCheckRow>
 						</div>
@@ -111,7 +111,6 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 						<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(3)}/>
 					</div>
 				</ModalContainer>
-
 				}
 			</>
 			<>
@@ -141,7 +140,9 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 								Cash
 							</ModalCheckRow>
 						</div>
-						<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(4)}/>
+						<ModalButton text={"Next step"}
+						             type={"button"}
+						             onClick={() => setStep(4)}/>
 					</div>
 				</ModalContainer>
 				}

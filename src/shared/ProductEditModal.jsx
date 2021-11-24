@@ -1,7 +1,7 @@
 import {useState} from "react";
+import {ModalCheckRow} from "../UI/modalCheckRow";
 import {useInput, errorMessages,} from "../services";
 import {useWarehousesContext} from "../context/warehousesContext";
-import {ModalCheckRow} from "../UI/modalCheckRow";
 import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import styles from "./styles/AuthModal.module.scss"
 import {

@@ -1,3 +1,10 @@
+import React from "react";
+import {Redirect, Route, Switch} from "react-router-dom";
+import {WarehousesProvider} from "../context/warehousesContext";
+import {useAuthContext} from "../context/authContext";
+import {privateRoutes} from "../routes";
+import {EditPanelWarehouses} from "../UI/editPanelWarehouses";
+import {EditPanelProduct} from "../UI/editPanelProduct";
 import styles from "./styles/MainPage.module.scss"
 import {Logo, Navbar} from "../UI";
 import {
@@ -5,13 +12,6 @@ import {
 	ProfileSvg, SearchSvg,
 	SettingsSvg,
 } from "../UI/assets/svg";
-import {useAuthContext} from "../context/authContext";
-import {Redirect, Route, Switch} from "react-router-dom";
-import {privateRoutes} from "../routes";
-import React from "react";
-import {EditPanelWarehouses} from "../UI/editPanelWarehouses";
-import {WarehousesProvider} from "../context/warehousesContext";
-import {EditPanelProduct} from "../UI/editPanelProduct";
 
 export const MainPage = () => {
 	const {setIsAuth} = useAuthContext()

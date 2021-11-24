@@ -1,5 +1,5 @@
-import {PlusSvg} from "./assets/svg";
 import styles from "./styles/ButtonAdd.module.scss"
+import {PlusSvg} from "./assets/svg";
 
 export const ButtonAdd = ({text, onClick}) => {
 	return (

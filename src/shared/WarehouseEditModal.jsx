@@ -6,6 +6,7 @@ import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import styles from "./styles/AuthModal.module.scss"
 
 export const WarehouseEditModal = () => {
+
 	const {
 		warehouses,
 		setWarehouses,
@@ -78,6 +79,7 @@ export const WarehouseEditModal = () => {
 		                onSubmit={handleSubmit}>
 
 			<div className={styles.modalInputs}>
+
 				<ModalInput label={"Name of the warehouse"}
 				            value={title}
 				            onChange={onChangeTitle}

@@ -1,12 +1,12 @@
 import {useEffect} from "react";
 import {useWarehousesContext} from "../context/warehousesContext";
-import {useToggle} from "../services";
 import {ButtonAdd} from "../UI";
 import {TableHeader} from "../UI/TableHeader";
 import {ProductAddModal} from "./ProductAddModal";
 import {TableRowProducts} from "../UI/TableRowProducts";
 import {ProductMoveModal} from "./ProductMoveModal";
 import {ProductEditModal} from "./ProductEditModal";
+import {useToggle} from "../services";
 import styles from "./styles/Warehouses.module.scss";
 import {SelectIconSvg} from "../UI/assets/svg";
 
@@ -64,7 +64,9 @@ export const WarehouseId = () => {
 						<option>Filter by</option>
 					</select>
 					<SelectIconSvg/>
-					<ButtonAdd text={"Add a product"} onClick={toggleIsVisibleAddProductPopup}/>
+
+					<ButtonAdd text={"Add a product"}
+					           onClick={toggleIsVisibleAddProductPopup}/>
 				</div>
 			</header>
 			<div className={styles.tableContainer}>

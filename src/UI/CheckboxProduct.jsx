@@ -18,7 +18,7 @@ export const CheckboxProduct = ({isActive, setActive, id}) => {
 	return (
 		<div onClick={(e) => e.stopPropagation()}>
 			<div className={classNames} onClick={() => setActive(!isActive)}>
-				<CheckboxIconSvg width={10} height={6} />
+				<CheckboxIconSvg width={10} height={6}/>
 			</div>
 		</div>
 	)

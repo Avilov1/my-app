@@ -4,7 +4,6 @@ import {useToggle} from "../services";
 import styles from "./styles/ModalSelectCustom.module.scss";
 import {SelectIconSvg} from "./assets/svg";
 
-
 export const ModalSelectCustom = ({setValue, value}) => {
 	const {warehouses, currentWarehouse} = useWarehousesContext()
 
