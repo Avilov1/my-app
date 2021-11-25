@@ -21,25 +21,7 @@
     opacity: 0.7;
     border-left: 2px solid transparent;
     transition: 0.2s;
-
-
-
-    a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-
-      .active {
-        opacity: 1;
-        color: $orange;
-        border-color: $orange;
-      }
-
-      &:visited {
-        text-decoration: none;
-        color: inherit;
-      }
-    }
+    color: inherit;
 
     span {
       position: absolute;
@@ -60,5 +42,27 @@
       color: $orange;
       border-color: $orange;
     }
+  }
+}
+
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $darkGray;
+
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.active {
+  opacity: 1;
+  color: $orange;
+  border-color: $orange;
+
+  li {
+    border-left: 2px solid $orange;
   }
 }

@@ -6,41 +6,47 @@ export const Navbar = () => {
 	return (
 		<nav className={styles.navbar}>
 			<ul>
-				<li>
-					<NavLink to={"/home"}><HomeSvg/>
+				<NavLink to={"/home"} activeClassName={styles.active}>
+					<li>
+						<HomeSvg/>
 						<span>Home</span>
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to={"/warehouses"}>
+					</li>
+				</NavLink>
+
+					<NavLink to={"/warehouses"} activeClassName={styles.active}>
+						<li>
 						<WarehousesSvg/>
 						<span>Warehouses</span>
+						</li>
 					</NavLink>
-				</li>
-				<li>
-					<NavLink to={"/account"}>
+
+					<NavLink to={"/account"} activeClassName={styles.active}>
+						<li>
 						<AccountsSvg/>
 						<span>Account</span>
+						</li>
 					</NavLink>
-				</li>
-				<li>
-					<NavLink to={"/cards"}>
+
+					<NavLink to={"/cards"} activeClassName={styles.active}>
+						<li>
 						<CardsSvg/>
 						<span>Cads</span>
+						</li>
 					</NavLink>
-				</li>
-				<li>
-					<NavLink to={"/contacts"}>
-					<ContactsSvg/>
-					<span>Contacts</span>
-				</NavLink>
-				</li>
-				<li>
-					<NavLink to={"/chat"}>
+
+					<NavLink to={"/contacts"} activeClassName={styles.active}>
+						<li>
+						<ContactsSvg/>
+						<span>Contacts</span>
+						</li>
+					</NavLink>
+
+					<NavLink to={"/chat"} activeClassName={styles.active}>
+						<li>
 						<ChatSvg/>
 						<span>Chat</span>
+						</li>
 					</NavLink>
-				</li>
 			</ul>
 		</nav>
 	)
