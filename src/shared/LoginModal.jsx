@@ -3,7 +3,7 @@ import {useAuthContext} from "../context/authContext";
 import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import {useLocalStorage, useInput, validate, errorMessages} from "../services";
 import {singIn} from "../services/http/userApi";
-import styles from "./styles/AuthModal.module.scss"
+import styles from "../UI/styles/AuthModal.module.scss"
 
 export const LoginModal = ({isVisible, toggleIsVisible, replaceAuthModal}) => {
 	const [email, onChangeMail] = useInput("")

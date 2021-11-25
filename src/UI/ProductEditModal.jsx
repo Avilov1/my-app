@@ -1,10 +1,10 @@
 import {useState} from "react";
-import {ModalCheckRow} from "../UI/modalCheckRow";
+import {ModalCheckRow} from "./modalCheckRow";
 import {useInput, errorMessages,} from "../services";
 import {useWarehousesContext} from "../context/warehousesContext";
 import {warehouseApi} from "../services/http/warehouseApi";
-import {StepIndicator} from "../UI/StepIndicator";
-import {ModalContainer, ModalButton, ModalInput} from "../UI";
+import {StepIndicator} from "./StepIndicator";
+import {ModalContainer, ModalButton, ModalInput} from "./index";
 import styles from "./styles/AuthModal.module.scss"
 import {
 	AirMethodSvg,
@@ -13,8 +13,8 @@ import {
 	SeaMethodSvg,
 	TruckMethodSvg,
 	VisaSvg
-} from "../UI/assets/svg";
-import {ModalRadio} from "../UI/modalRadio";
+} from "./assets/svg";
+import {ModalRadio} from "./modalRadio";
 
 
 export const ProductEditModal = ({isVisible, toggleIsVisible}) => {

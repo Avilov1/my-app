@@ -1,7 +1,7 @@
 import {useWarehousesContext} from "../context/warehousesContext";
 import {useState} from "react";
-import {ModalContainer, ModalButton, ModalInput} from "../UI";
-import {ModalCheckRow} from "../UI/modalCheckRow";
+import {ModalContainer, ModalButton, ModalInput} from "./index";
+import {ModalCheckRow} from "./modalCheckRow";
 import {warehouseApi} from "../services/http/warehouseApi";
 import {useInput, errorMessages,} from "../services";
 import styles from "./styles/AuthModal.module.scss"
@@ -14,8 +14,8 @@ import {
 	SeaMethodSvg,
 	TruckMethodSvg,
 	VisaSvg
-} from "../UI/assets/svg";
-import {ModalRadio} from "../UI/modalRadio";
+} from "./assets/svg";
+import {ModalRadio} from "./modalRadio";
 
 export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 	const [step, setStep] = useState(1)

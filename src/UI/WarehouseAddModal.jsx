@@ -1,48 +1,31 @@
 import {useState} from "react";
 import {useWarehousesContext} from "../context/warehousesContext";
+import {ModalContainer, ModalButton, ModalInput} from "./index";
 import {useInput, errorMessages} from "../services";
 import {warehouseApi} from "../services/http/warehouseApi";
-import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import styles from "./styles/AuthModal.module.scss"
 
-export const WarehouseEditModal = () => {
-
-	const {
-		warehouses,
-		setWarehouses,
-		isEditWarehouse,
-		setIsEditWarehouse,
-		checkWarehouses,
-		setCheckWarehouses
-	} = useWarehousesContext()
-
-	const [title, onChangeTitle] = useInput(checkWarehouses[0].title)
-	const [length, onChangeLength] = useInput(checkWarehouses[0].length)
-	const [width, onChangeWidth] = useInput(checkWarehouses[0].width)
-	const [height, onChangeHeight] = useInput(checkWarehouses[0].height)
+export const WarehouseAddModal = ({isVisible, toggleIsVisible}) => {
+	const [title, onChangeTitle] = useInput("")
+	const [length, onChangeLength] = useInput("")
+	const [width, onChangeWidth] = useInput("")
+	const [height, onChangeHeight] = useInput("")
 	const [isTitleError, setIsTitleError] = useState(null)
 	const [isLengthError, setIsLengthError] = useState(null)
 	const [isWidthError, setIsWidthError] = useState(null)
 	const [isHeightError, setIsHeightError] = useState(null)
 	const [messageError, setMessageError] = useState(null)
+	const {setWarehouses} = useWarehousesContext()
 
-	const editWarehouse = async () => {
+	const addWarehouse = async () => {
+		const products = []
+		const newWarehouse = {title, length, width, height, products}
+
 		try {
-			const {data} = await warehouseApi.update({...checkWarehouses[0], title, length, width, height})
-
-			const newState = warehouses.map(warehouse => {
-				if (warehouse._id === checkWarehouses[0]._id) {
-					return {
-						...data
-					}
-				} else {
-					return warehouse
-				}
-			})
-
-			setIsEditWarehouse(false)
-			setCheckWarehouses([])
-			setWarehouses(newState)
+			await warehouseApi.add(newWarehouse)
+			const {data} = await warehouseApi.getAll()
+			setWarehouses(data)
+			toggleIsVisible()
 
 		} catch (e) {
 			alert(e)
@@ -50,7 +33,7 @@ export const WarehouseEditModal = () => {
 	}
 
 	const checkForm = (value, error, message) => {
-		if (value.length <= 0 || "") {
+		if (value.length <= 0) {
 			error(true)
 			message(errorMessages.valueIsEmpty)
 		} else {
@@ -61,25 +44,23 @@ export const WarehouseEditModal = () => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault()
-
 		checkForm(title, setIsTitleError, setMessageError)
 		checkForm(length, setIsLengthError, setMessageError)
 		checkForm(width, setIsWidthError, setMessageError)
 		checkForm(height, setIsHeightError, setMessageError)
 
 		if ((title && width && length && height)) {
-			editWarehouse()
+			addWarehouse()
 		}
 	}
 
 	return (
-		<ModalContainer isVisible={isEditWarehouse}
-		                toggleIsVisible={() => setIsEditWarehouse(false)}
+		<ModalContainer isVisible={isVisible}
+		                toggleIsVisible={toggleIsVisible}
 		                title={"Adding a warehouse"}
 		                onSubmit={handleSubmit}>
 
 			<div className={styles.modalInputs}>
-
 				<ModalInput label={"Name of the warehouse"}
 				            value={title}
 				            onChange={onChangeTitle}
@@ -112,6 +93,7 @@ export const WarehouseEditModal = () => {
 				            messageError={messageError}
 				            type={"text"}/>
 			</div>
+
 			<ModalButton text={"Add a warehouse"} type={"submit"}/>
 		</ModalContainer>
 	)

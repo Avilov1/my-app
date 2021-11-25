@@ -5,8 +5,8 @@ import {TableHeader} from "../UI/TableHeader";
 import {TableRowWarehouses} from "../UI/TableRowWarehouses";
 import {warehouseApi} from "../services/http/warehouseApi";
 import {useToggle} from "../services";
-import {WarehouseAddModal} from "./WarehouseAddModal";
-import {WarehouseEditModal} from "./WarehouseEditModal";
+import {WarehouseAddModal} from "../UI/WarehouseAddModal";
+import {WarehouseEditModal} from "../UI/WarehouseEditModal";
 import styles from "./styles/Warehouses.module.scss";
 import {SelectIconSvg} from "../UI/assets/svg";
 

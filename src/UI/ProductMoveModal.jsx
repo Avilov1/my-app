@@ -1,8 +1,8 @@
 import {useState} from "react";
 import {useWarehousesContext} from "../context/warehousesContext";
-import {ModalContainer, ModalButton, ModalInput} from "../UI";
-import {ModalCheckRow} from "../UI/modalCheckRow";
-import {ModalSelectCustom} from "../UI/ModalSelectCustom";
+import {ModalContainer, ModalButton, ModalInput} from "./index";
+import {ModalCheckRow} from "./modalCheckRow";
+import {ModalSelectCustom} from "./ModalSelectCustom";
 import {warehouseApi} from "../services/http/warehouseApi";
 import styles from "./styles/AuthModal.module.scss"
 import {
@@ -13,8 +13,8 @@ import {
 	SeaMethodSvg,
 	TruckMethodSvg,
 	VisaSvg
-} from "../UI/assets/svg";
-import {StepIndicator} from "../UI/StepIndicator";
+} from "./assets/svg";
+import {StepIndicator} from "./StepIndicator";
 
 export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 	const {
