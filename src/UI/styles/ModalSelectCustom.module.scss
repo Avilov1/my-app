@@ -5,7 +5,7 @@
   flex-direction: column;
   cursor: pointer;
   align-items: flex-start;
-  position: relative;
+  //position: relative;
 
   .label {
     padding-bottom: 8px;
@@ -30,6 +30,7 @@
     padding-right: 22px;
     color: $darkGray;
     transition: all 100ms ease;
+    position: relative;
 
     svg {
       transition: all 200ms ease-out;

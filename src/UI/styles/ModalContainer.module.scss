@@ -29,7 +29,12 @@
   align-items: center;
 
   .modalHeader {
-    svg {
+
+    .doneImg {
+      margin-bottom: 56px;
+    }
+
+    .closeIcon {
       position: absolute;
       margin: 20px 20px 0 0;
       right: 0;
@@ -43,17 +48,22 @@
       display: inline-block;
       font-weight: 600;
       font-size: 36px;
-      line-height: 36px;
+      height: 88px;
+      line-height: 44px;
       color: $darkGray;
       margin-bottom: 45px;
+      width: 370px;
     }
   }
 
   .modalContent {
     display: flex;
     flex-direction: column;
+
   }
+
 }
+
 
 
 

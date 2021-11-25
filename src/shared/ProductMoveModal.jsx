@@ -7,7 +7,7 @@ import {warehouseApi} from "../services/http/warehouseApi";
 import styles from "./styles/AuthModal.module.scss"
 import {
 	AirMethodSvg,
-	CashSvg,
+	CashSvg, MoveArrowSvg,
 	MoveSuccessSvg,
 	PaypalSvg,
 	SeaMethodSvg,
@@ -65,7 +65,7 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 				{step === 1 &&
 				<ModalContainer isVisible={isVisible}
 				                toggleIsVisible={toggleIsVisible}
-				                title={"Adding a product"}>
+				                title={"Move cargo"}>
 
 					<StepIndicator step={step}/>
 
@@ -74,6 +74,11 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 						            value={warehouseFrom.title}
 						            type={"text"}
 						            disabled/>
+
+						<div className={styles.moveArrow}>
+							<MoveArrowSvg/>
+						</div>
+
 						<ModalSelectCustom value={warehouseIn} setValue={setWarehouseIn}/>
 
 					</div>
@@ -108,8 +113,8 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 								By car
 							</ModalCheckRow>
 						</div>
-						<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(3)}/>
 					</div>
+					<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(3)}/>
 				</ModalContainer>
 				}
 			</>
@@ -151,13 +156,11 @@ export const ProductMoveModal = ({isVisible, toggleIsVisible}) => {
 				{step === 4 &&
 				<ModalContainer isVisible={isVisible}
 				                toggleIsVisible={toggleIsVisible}
-				                title={"The cargo was successfully created"}
+				                title={"Cargo was successfully moved"}
+				                doneImg={"move"}
 				                onSubmit={handleSubmit}>
 
-					<div className={styles.modalInputs}>
-						<MoveSuccessSvg width={224} height={224}/>
 						<ModalButton text={"Continue"} type={"submit"}/>
-					</div>
 				</ModalContainer>
 				}</>
 		</>

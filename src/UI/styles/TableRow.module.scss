@@ -15,6 +15,12 @@
   padding-left: 24px;
   cursor: pointer;
 
+  .shipmentMethod {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
   div {
     display: flex;
     align-items: center;

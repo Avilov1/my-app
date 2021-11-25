@@ -24,8 +24,10 @@ import {ReactComponent as MoveSuccessSvg} from "./moveSuccess.svg";
 import {ReactComponent as VisaSvg} from "./visa.svg";
 import {ReactComponent as PaypalSvg} from "./paypal.svg";
 import {ReactComponent as CashSvg} from "./cash.svg";
+import {ReactComponent as MoveArrowSvg} from "./moveArrowIcon.svg";
 
 export {
+    MoveArrowSvg,
     ProfileSvg,
     CloseFormSvg,
     ScrollEllipseSvg,

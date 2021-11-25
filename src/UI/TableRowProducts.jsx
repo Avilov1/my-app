@@ -1,7 +1,9 @@
 import {useEffect, useState} from "react";
 import {useWarehousesContext} from "../context/warehousesContext";
 import {CheckboxProduct} from "./CheckboxProduct";
+import {ShipmentSwitchIcon} from "./ShipmentSwitchIcon";
 import styles from "./styles/TableRow.module.scss"
+
 
 export const TableRowProducts = ({obj}) => {
 	const [isActive, setIsActive] = useState(false)
@@ -50,7 +52,10 @@ export const TableRowProducts = ({obj}) => {
 				{obj.purchasingTechnology}
 			</td>
 			<td className={styles.td}>
-				{obj.shipmentMethod}
+				<div className={styles.shipmentMethod}>
+					<ShipmentSwitchIcon method={obj.shipmentMethod}/>
+					{obj.shipmentMethod}
+				</div>
 			</td>
 		</tr>
 	)

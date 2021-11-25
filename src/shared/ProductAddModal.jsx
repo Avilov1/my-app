@@ -15,6 +15,7 @@ import {
 	TruckMethodSvg,
 	VisaSvg
 } from "../UI/assets/svg";
+import {ModalRadio} from "../UI/modalRadio";
 
 export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 	const [step, setStep] = useState(1)
@@ -26,7 +27,7 @@ export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 	const [isItemNumberError, setIsItemNumberError] = useState(null)
 	const [messageError, setMessageError] = useState(null)
 	const [purchasingTechnology, setPurchasingTechnology] = useState("A")
-	const [shipmentMethod, setShipmentMethod] = useState("air")
+	const [shipmentMethod, setShipmentMethod] = useState("AIR")
 	const [paymentMethod, setPaymentMethod] = useState("visa")
 	const {setWarehouses, currentWarehouse, setCurrentWarehouse} = useWarehousesContext()
 
@@ -106,64 +107,31 @@ export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 						            messageError={messageError}
 						            type={"text"}/>
 
-						<span>Purchasing technology</span>
+						<span className={styles.purchaseTitle}>Purchasing technology</span>
+
 						<div className={styles.radioBtn}>
 							<div
-								className="radio-btn"
 								onClick={() => {
 									setPurchasingTechnology("A");
-								}}
-							>
-								A
-								<input
-									type="radio"
-									value={purchasingTechnology}
-									name="purchaseTechnology"
-									checked={purchasingTechnology === "A"}
+								}}>
+								<ModalRadio label={"A"} checked={purchasingTechnology === "A"}/>
+							</div>
+							<div onClick={() => {
+								setPurchasingTechnology("S");
+							}}>
+								<ModalRadio label={"S"} checked={purchasingTechnology === "S"}/>
+							</div>
 
-								/>
+							<div onClick={() => {
+								setPurchasingTechnology("D")
+							}}>
+								<ModalRadio label={"D"} checked={purchasingTechnology === "D"}/>
 							</div>
-							<div
-								className="radio-btn"
-								onClick={() => {
-									setPurchasingTechnology("B");
-								}}
-							>
-								B
-								<input
-									type="radio"
-									value={purchasingTechnology}
-									name="purchaseTechnology"
-									checked={purchasingTechnology === "B"}
-								/>
-							</div>
-							<div
-								className="radio-btn"
-								onClick={() => {
-									setPurchasingTechnology("C");
-								}}
-							>
-								C
-								<input
-									type="radio"
-									value={purchasingTechnology}
-									name="purchaseTechnology"
-									checked={purchasingTechnology === "C"}
-								/>
-							</div>
-							<div
-								className="radio-btn"
-								onClick={() => {
-									setPurchasingTechnology("D");
-								}}
-							>
-								D
-								<input
-									type="radio"
-									value={purchasingTechnology}
-									name="purchaseTechnology"
-									checked={purchasingTechnology === "D"}
-								/>
+
+							<div onClick={() => {
+								setPurchasingTechnology("F")
+							}}>
+								<ModalRadio label={"F"} checked={purchasingTechnology === "F"}/>
 							</div>
 						</div>
 					</div>
@@ -178,28 +146,27 @@ export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 				                title={"Shipping method"}
 				>
 					<div className={styles.modalInputs}>
-						<div onClick={() => (setShipmentMethod("air"))}>
-							<ModalCheckRow isActive={shipmentMethod === "air"}>
+						<div onClick={() => (setShipmentMethod("AIR"))}>
+							<ModalCheckRow isActive={shipmentMethod === "AIR"}>
 								<AirMethodSvg width={24} height={24}/>
 								By air transport
 							</ModalCheckRow>
 						</div>
-						<div onClick={() => (setShipmentMethod("sea"))}>
-							<ModalCheckRow isActive={shipmentMethod === "sea"}>
+						<div onClick={() => (setShipmentMethod("SEA"))}>
+							<ModalCheckRow isActive={shipmentMethod === "SEA"}>
 								<SeaMethodSvg width={24} height={24}/>
 								By sea
 							</ModalCheckRow>
 						</div>
-						<div onClick={() => (setShipmentMethod("truck"))}>
-							<ModalCheckRow isActive={shipmentMethod === "truck"}>
+						<div onClick={() => (setShipmentMethod("TRUCK"))}>
+							<ModalCheckRow isActive={shipmentMethod === "TRUCK"}>
 								<TruckMethodSvg width={24} height={24}/>
 								By car
 							</ModalCheckRow>
 						</div>
-						<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(3)}/>
 					</div>
+					<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(3)}/>
 				</ModalContainer>
-
 				}
 			</>
 			<>
@@ -227,8 +194,8 @@ export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 								Cash
 							</ModalCheckRow>
 						</div>
-						<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(4)}/>
 					</div>
+					<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(4)}/>
 				</ModalContainer>
 				}
 			</>
@@ -237,14 +204,10 @@ export const ProductAddModal = ({isVisible, toggleIsVisible}) => {
 				<ModalContainer isVisible={isVisible}
 				                toggleIsVisible={toggleIsVisible}
 				                title={"The cargo was successfully created"}
+				                doneImg={"add"}
 				                onSubmit={handleSubmit}>
 
-					<div className={styles.modalInputs}>
-						<div className={styles.imgCenter}>
-							<CargoSuccessSvg width={224} height={224}/>
-						</div>
-						<ModalButton text={"Continue"} type={"submit"}/>
-					</div>
+					<ModalButton text={"Continue"} type={"submit"}/>
 				</ModalContainer>
 				}</>
 		</>

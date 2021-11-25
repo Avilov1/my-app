@@ -2,19 +2,20 @@ import {useState} from "react";
 import {ModalCheckRow} from "../UI/modalCheckRow";
 import {useInput, errorMessages,} from "../services";
 import {useWarehousesContext} from "../context/warehousesContext";
+import {warehouseApi} from "../services/http/warehouseApi";
+import {StepIndicator} from "../UI/StepIndicator";
 import {ModalContainer, ModalButton, ModalInput} from "../UI";
 import styles from "./styles/AuthModal.module.scss"
 import {
 	AirMethodSvg,
-	CargoSuccessSvg,
 	CashSvg,
 	PaypalSvg,
 	SeaMethodSvg,
 	TruckMethodSvg,
 	VisaSvg
 } from "../UI/assets/svg";
-import {warehouseApi} from "../services/http/warehouseApi";
-import {StepIndicator} from "../UI/StepIndicator";
+import {ModalRadio} from "../UI/modalRadio";
+
 
 export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 	const {
@@ -129,64 +130,31 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 						            messageError={messageError}
 						            type={"text"}/>
 
-						<span>Purchasing technology</span>
+						<span className={styles.purchaseTitle}>Purchasing technology</span>
+
 						<div className={styles.radioBtn}>
 							<div
-								className="radio-btn"
 								onClick={() => {
 									setPurchasingTechnology("A");
-								}}
-							>
-								A
-								<input
-									type="radio"
-									value={purchasingTechnology}
-									name="purchaseTechnology"
-									checked={purchasingTechnology === "A"}
+								}}>
+								<ModalRadio label={"A"} checked={purchasingTechnology === "A"}/>
+							</div>
+							<div onClick={() => {
+								setPurchasingTechnology("S");
+							}}>
+								<ModalRadio label={"S"} checked={purchasingTechnology === "S"}/>
+							</div>
 
-								/>
+							<div onClick={() => {
+								setPurchasingTechnology("D")
+							}}>
+								<ModalRadio label={"D"} checked={purchasingTechnology === "D"}/>
 							</div>
-							<div
-								className="radio-btn"
-								onClick={() => {
-									setPurchasingTechnology("S");
-								}}
-							>
-								S
-								<input
-									type="radio"
-									value={purchasingTechnology}
-									name="purchaseTechnology"
-									checked={purchasingTechnology === "S"}
-								/>
-							</div>
-							<div
-								className="radio-btn"
-								onClick={() => {
-									setPurchasingTechnology("C");
-								}}
-							>
-								C
-								<input
-									type="radio"
-									value={purchasingTechnology}
-									name="purchaseTechnology"
-									checked={purchasingTechnology === "C"}
-								/>
-							</div>
-							<div
-								className="radio-btn"
-								onClick={() => {
-									setPurchasingTechnology("D");
-								}}
-							>
-								D
-								<input
-									type="radio"
-									value={purchasingTechnology}
-									name="purchaseTechnology"
-									checked={purchasingTechnology === "D"}
-								/>
+
+							<div onClick={() => {
+								setPurchasingTechnology("F")
+							}}>
+								<ModalRadio label={"F"} checked={purchasingTechnology === "F"}/>
 							</div>
 						</div>
 					</div>
@@ -221,10 +189,9 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 								By car
 							</ModalCheckRow>
 						</div>
-						<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(3)}/>
 					</div>
+					<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(3)}/>
 				</ModalContainer>
-
 				}
 			</>
 			<>
@@ -254,8 +221,8 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 								Cash
 							</ModalCheckRow>
 						</div>
-						<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(4)}/>
 					</div>
+					<ModalButton text={"Next step"} type={"button"} onClick={() => setStep(4)}/>
 				</ModalContainer>
 				}
 			</>
@@ -263,13 +230,11 @@ export const ProductEditModal = ({isVisible, toggleIsVisible}) => {
 				{step === 4 &&
 				<ModalContainer isVisible={isVisible}
 				                toggleIsVisible={toggleIsVisible}
-				                title={"The cargo was successfully created"}
+				                title={"The cargo was successfully edit"}
+				                doneImg={"edit"}
 				                onSubmit={handleSubmit}>
 
-					<div className={styles.modalInputs}>
-						<CargoSuccessSvg width={224} height={224}/>
-						<ModalButton text={"Continue"} type={"submit"}/>
-					</div>
+					<ModalButton text={"Continue"} type={"submit"}/>
 				</ModalContainer>
 				}</>
 		</>

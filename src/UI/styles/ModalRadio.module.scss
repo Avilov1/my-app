@@ -1,0 +1,40 @@
+@import "./src/index";
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  label {
+    font-size: 14px;
+    line-height: 14px;
+    color: $darkGray;
+    opacity: 0.4;
+    transition: 200ms ease-in-out;
+  }
+  .checked {
+    opacity: 1;
+  }
+
+  .stroke {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #E6E8EA;
+    border-radius: 50%;
+    transition: 1s;
+
+    .fill {
+      height: 12px;
+      width: 12px;
+      background-color: $orange;
+      border-radius: 50%;
+    }
+  }
+}
+
+
+

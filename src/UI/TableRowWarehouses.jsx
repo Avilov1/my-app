@@ -1,5 +1,5 @@
-import {useHistory, useLocation} from "react-router-dom";
 import {useEffect, useState} from "react";
+import {useHistory, useLocation} from "react-router-dom";
 import {CheckboxWarehouse} from "./CheckboxWarehouse";
 import {useWarehousesContext} from "../context/warehousesContext";
 import styles from "./styles/TableRow.module.scss"
